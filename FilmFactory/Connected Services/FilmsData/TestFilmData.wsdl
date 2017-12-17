@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FilmDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2356/TestFilmData.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2356/TestFilmData.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2356/TestFilmData.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TestService.DataContract" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFilmDataService_CheckConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckConnection" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_CheckConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetFilms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilms" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetFilms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_AddFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFilm" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_AddFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFilmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_UpdateFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilm" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_UpdateFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_DeleteFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFilm" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_DeleteFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFilmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetFilmById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmById" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetFilmById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetGenres_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenres" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetGenres_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_AddGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGenre" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_AddGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_UpdateGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGenre" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_UpdateGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_DeleteGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGenre" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_DeleteGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetGenreById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenreById" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetGenreById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenreByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetDirector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirector" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetDirector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_AddDirector_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDirector" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_AddDirector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_UpdateDirector_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDirector" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_UpdateDirector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_DeleteDirector_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirector" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_DeleteDirector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetDirectorById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectorById" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_GetDirectorById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectorByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFilmDataService">
+    <wsdl:operation name="CheckConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/CheckConnection" message="tns:IFilmDataService_CheckConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/CheckConnectionResponse" message="tns:IFilmDataService_CheckConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/GetFilms" message="tns:IFilmDataService_GetFilms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/GetFilmsResponse" message="tns:IFilmDataService_GetFilms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/AddFilm" message="tns:IFilmDataService_AddFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/AddFilmResponse" message="tns:IFilmDataService_AddFilm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/UpdateFilm" message="tns:IFilmDataService_UpdateFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/UpdateFilmResponse" message="tns:IFilmDataService_UpdateFilm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/DeleteFilm" message="tns:IFilmDataService_DeleteFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/DeleteFilmResponse" message="tns:IFilmDataService_DeleteFilm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/GetFilmById" message="tns:IFilmDataService_GetFilmById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/GetFilmByIdResponse" message="tns:IFilmDataService_GetFilmById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGenres">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/GetGenres" message="tns:IFilmDataService_GetGenres_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/GetGenresResponse" message="tns:IFilmDataService_GetGenres_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/AddGenre" message="tns:IFilmDataService_AddGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/AddGenreResponse" message="tns:IFilmDataService_AddGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/UpdateGenre" message="tns:IFilmDataService_UpdateGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/UpdateGenreResponse" message="tns:IFilmDataService_UpdateGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/DeleteGenre" message="tns:IFilmDataService_DeleteGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/DeleteGenreResponse" message="tns:IFilmDataService_DeleteGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGenreById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/GetGenreById" message="tns:IFilmDataService_GetGenreById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/GetGenreByIdResponse" message="tns:IFilmDataService_GetGenreById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/GetDirector" message="tns:IFilmDataService_GetDirector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/GetDirectorResponse" message="tns:IFilmDataService_GetDirector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDirector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/AddDirector" message="tns:IFilmDataService_AddDirector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/AddDirectorResponse" message="tns:IFilmDataService_AddDirector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDirector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/UpdateDirector" message="tns:IFilmDataService_UpdateDirector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/UpdateDirectorResponse" message="tns:IFilmDataService_UpdateDirector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/DeleteDirector" message="tns:IFilmDataService_DeleteDirector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/DeleteDirectorResponse" message="tns:IFilmDataService_DeleteDirector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectorById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/GetDirectorById" message="tns:IFilmDataService_GetDirectorById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/GetDirectorByIdResponse" message="tns:IFilmDataService_GetDirectorById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFilmDataService" type="tns:IFilmDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckConnection">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilms">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/GetFilms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFilm">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/AddFilm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFilm">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/UpdateFilm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFilm">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/DeleteFilm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmById">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/GetFilmById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGenres">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/GetGenres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGenre">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/AddGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenre">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/UpdateGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGenre">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/DeleteGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGenreById">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/GetGenreById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirector">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/GetDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDirector">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/AddDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDirector">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/UpdateDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirector">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/DeleteDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectorById">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/GetDirectorById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FilmDataService">
+    <wsdl:port name="BasicHttpBinding_IFilmDataService" binding="tns:BasicHttpBinding_IFilmDataService">
+      <soap:address location="http://localhost:2356/TestFilmData.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServiceTest.FilmData {
+namespace FilmFactory.FilmsData {
     using System.Runtime.Serialization;
     using System;
     
@@ -29,7 +29,7 @@ namespace ServiceTest.FilmData {
         private int DirectorIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ServiceTest.FilmData.GenreContract[] GenreField;
+        private FilmFactory.FilmsData.GenreContract[] GenreField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -83,7 +83,7 @@ namespace ServiceTest.FilmData {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceTest.FilmData.GenreContract[] Genre {
+        public FilmFactory.FilmsData.GenreContract[] Genre {
             get {
                 return this.GenreField;
             }
@@ -293,130 +293,130 @@ namespace ServiceTest.FilmData {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FilmData.ITestFilmData")]
-    public interface ITestFilmData {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FilmsData.IFilmDataService")]
+    public interface IFilmDataService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/CheckConnection", ReplyAction="http://tempuri.org/ITestFilmData/CheckConnectionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/CheckConnection", ReplyAction="http://tempuri.org/IFilmDataService/CheckConnectionResponse")]
         string CheckConnection();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/CheckConnection", ReplyAction="http://tempuri.org/ITestFilmData/CheckConnectionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/CheckConnection", ReplyAction="http://tempuri.org/IFilmDataService/CheckConnectionResponse")]
         System.Threading.Tasks.Task<string> CheckConnectionAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetFilms", ReplyAction="http://tempuri.org/ITestFilmData/GetFilmsResponse")]
-        ServiceTest.FilmData.FilmContract[] GetFilms();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetFilms", ReplyAction="http://tempuri.org/IFilmDataService/GetFilmsResponse")]
+        FilmFactory.FilmsData.FilmContract[] GetFilms();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetFilms", ReplyAction="http://tempuri.org/ITestFilmData/GetFilmsResponse")]
-        System.Threading.Tasks.Task<ServiceTest.FilmData.FilmContract[]> GetFilmsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetFilms", ReplyAction="http://tempuri.org/IFilmDataService/GetFilmsResponse")]
+        System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> GetFilmsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddFilm", ReplyAction="http://tempuri.org/ITestFilmData/AddFilmResponse")]
-        void AddFilm(ServiceTest.FilmData.FilmContract film);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/AddFilm", ReplyAction="http://tempuri.org/IFilmDataService/AddFilmResponse")]
+        void AddFilm(FilmFactory.FilmsData.FilmContract film);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddFilm", ReplyAction="http://tempuri.org/ITestFilmData/AddFilmResponse")]
-        System.Threading.Tasks.Task AddFilmAsync(ServiceTest.FilmData.FilmContract film);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/AddFilm", ReplyAction="http://tempuri.org/IFilmDataService/AddFilmResponse")]
+        System.Threading.Tasks.Task AddFilmAsync(FilmFactory.FilmsData.FilmContract film);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/UpdateFilm", ReplyAction="http://tempuri.org/ITestFilmData/UpdateFilmResponse")]
-        void UpdateFilm(ServiceTest.FilmData.FilmContract film);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/UpdateFilm", ReplyAction="http://tempuri.org/IFilmDataService/UpdateFilmResponse")]
+        void UpdateFilm(FilmFactory.FilmsData.FilmContract film);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/UpdateFilm", ReplyAction="http://tempuri.org/ITestFilmData/UpdateFilmResponse")]
-        System.Threading.Tasks.Task UpdateFilmAsync(ServiceTest.FilmData.FilmContract film);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/UpdateFilm", ReplyAction="http://tempuri.org/IFilmDataService/UpdateFilmResponse")]
+        System.Threading.Tasks.Task UpdateFilmAsync(FilmFactory.FilmsData.FilmContract film);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/DeleteFilm", ReplyAction="http://tempuri.org/ITestFilmData/DeleteFilmResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/DeleteFilm", ReplyAction="http://tempuri.org/IFilmDataService/DeleteFilmResponse")]
         void DeleteFilm(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/DeleteFilm", ReplyAction="http://tempuri.org/ITestFilmData/DeleteFilmResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/DeleteFilm", ReplyAction="http://tempuri.org/IFilmDataService/DeleteFilmResponse")]
         System.Threading.Tasks.Task DeleteFilmAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetFilmById", ReplyAction="http://tempuri.org/ITestFilmData/GetFilmByIdResponse")]
-        ServiceTest.FilmData.FilmContract GetFilmById(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetFilmById", ReplyAction="http://tempuri.org/IFilmDataService/GetFilmByIdResponse")]
+        FilmFactory.FilmsData.FilmContract GetFilmById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetFilmById", ReplyAction="http://tempuri.org/ITestFilmData/GetFilmByIdResponse")]
-        System.Threading.Tasks.Task<ServiceTest.FilmData.FilmContract> GetFilmByIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetFilmById", ReplyAction="http://tempuri.org/IFilmDataService/GetFilmByIdResponse")]
+        System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract> GetFilmByIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetGenres", ReplyAction="http://tempuri.org/ITestFilmData/GetGenresResponse")]
-        ServiceTest.FilmData.GenreContract[] GetGenres();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetGenres", ReplyAction="http://tempuri.org/IFilmDataService/GetGenresResponse")]
+        FilmFactory.FilmsData.GenreContract[] GetGenres();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetGenres", ReplyAction="http://tempuri.org/ITestFilmData/GetGenresResponse")]
-        System.Threading.Tasks.Task<ServiceTest.FilmData.GenreContract[]> GetGenresAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetGenres", ReplyAction="http://tempuri.org/IFilmDataService/GetGenresResponse")]
+        System.Threading.Tasks.Task<FilmFactory.FilmsData.GenreContract[]> GetGenresAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddGenre", ReplyAction="http://tempuri.org/ITestFilmData/AddGenreResponse")]
-        void AddGenre(ServiceTest.FilmData.GenreContract genre);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/AddGenre", ReplyAction="http://tempuri.org/IFilmDataService/AddGenreResponse")]
+        void AddGenre(FilmFactory.FilmsData.GenreContract genre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddGenre", ReplyAction="http://tempuri.org/ITestFilmData/AddGenreResponse")]
-        System.Threading.Tasks.Task AddGenreAsync(ServiceTest.FilmData.GenreContract genre);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/AddGenre", ReplyAction="http://tempuri.org/IFilmDataService/AddGenreResponse")]
+        System.Threading.Tasks.Task AddGenreAsync(FilmFactory.FilmsData.GenreContract genre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/UpdateGenre", ReplyAction="http://tempuri.org/ITestFilmData/UpdateGenreResponse")]
-        void UpdateGenre(ServiceTest.FilmData.GenreContract genre);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/UpdateGenre", ReplyAction="http://tempuri.org/IFilmDataService/UpdateGenreResponse")]
+        void UpdateGenre(FilmFactory.FilmsData.GenreContract genre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/UpdateGenre", ReplyAction="http://tempuri.org/ITestFilmData/UpdateGenreResponse")]
-        System.Threading.Tasks.Task UpdateGenreAsync(ServiceTest.FilmData.GenreContract genre);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/UpdateGenre", ReplyAction="http://tempuri.org/IFilmDataService/UpdateGenreResponse")]
+        System.Threading.Tasks.Task UpdateGenreAsync(FilmFactory.FilmsData.GenreContract genre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/DeleteGenre", ReplyAction="http://tempuri.org/ITestFilmData/DeleteGenreResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/DeleteGenre", ReplyAction="http://tempuri.org/IFilmDataService/DeleteGenreResponse")]
         void DeleteGenre(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/DeleteGenre", ReplyAction="http://tempuri.org/ITestFilmData/DeleteGenreResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/DeleteGenre", ReplyAction="http://tempuri.org/IFilmDataService/DeleteGenreResponse")]
         System.Threading.Tasks.Task DeleteGenreAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetGenreById", ReplyAction="http://tempuri.org/ITestFilmData/GetGenreByIdResponse")]
-        ServiceTest.FilmData.GenreContract GetGenreById(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetGenreById", ReplyAction="http://tempuri.org/IFilmDataService/GetGenreByIdResponse")]
+        FilmFactory.FilmsData.GenreContract GetGenreById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetGenreById", ReplyAction="http://tempuri.org/ITestFilmData/GetGenreByIdResponse")]
-        System.Threading.Tasks.Task<ServiceTest.FilmData.GenreContract> GetGenreByIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetGenreById", ReplyAction="http://tempuri.org/IFilmDataService/GetGenreByIdResponse")]
+        System.Threading.Tasks.Task<FilmFactory.FilmsData.GenreContract> GetGenreByIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetDirector", ReplyAction="http://tempuri.org/ITestFilmData/GetDirectorResponse")]
-        ServiceTest.FilmData.DirectorContract[] GetDirector();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetDirector", ReplyAction="http://tempuri.org/IFilmDataService/GetDirectorResponse")]
+        FilmFactory.FilmsData.DirectorContract[] GetDirector();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetDirector", ReplyAction="http://tempuri.org/ITestFilmData/GetDirectorResponse")]
-        System.Threading.Tasks.Task<ServiceTest.FilmData.DirectorContract[]> GetDirectorAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetDirector", ReplyAction="http://tempuri.org/IFilmDataService/GetDirectorResponse")]
+        System.Threading.Tasks.Task<FilmFactory.FilmsData.DirectorContract[]> GetDirectorAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddDirector", ReplyAction="http://tempuri.org/ITestFilmData/AddDirectorResponse")]
-        void AddDirector(ServiceTest.FilmData.DirectorContract director);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/AddDirector", ReplyAction="http://tempuri.org/IFilmDataService/AddDirectorResponse")]
+        void AddDirector(FilmFactory.FilmsData.DirectorContract director);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddDirector", ReplyAction="http://tempuri.org/ITestFilmData/AddDirectorResponse")]
-        System.Threading.Tasks.Task AddDirectorAsync(ServiceTest.FilmData.DirectorContract director);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/AddDirector", ReplyAction="http://tempuri.org/IFilmDataService/AddDirectorResponse")]
+        System.Threading.Tasks.Task AddDirectorAsync(FilmFactory.FilmsData.DirectorContract director);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/UpdateDirector", ReplyAction="http://tempuri.org/ITestFilmData/UpdateDirectorResponse")]
-        void UpdateDirector(ServiceTest.FilmData.DirectorContract director);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/UpdateDirector", ReplyAction="http://tempuri.org/IFilmDataService/UpdateDirectorResponse")]
+        void UpdateDirector(FilmFactory.FilmsData.DirectorContract director);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/UpdateDirector", ReplyAction="http://tempuri.org/ITestFilmData/UpdateDirectorResponse")]
-        System.Threading.Tasks.Task UpdateDirectorAsync(ServiceTest.FilmData.DirectorContract director);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/UpdateDirector", ReplyAction="http://tempuri.org/IFilmDataService/UpdateDirectorResponse")]
+        System.Threading.Tasks.Task UpdateDirectorAsync(FilmFactory.FilmsData.DirectorContract director);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/DeleteDirector", ReplyAction="http://tempuri.org/ITestFilmData/DeleteDirectorResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/DeleteDirector", ReplyAction="http://tempuri.org/IFilmDataService/DeleteDirectorResponse")]
         void DeleteDirector(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/DeleteDirector", ReplyAction="http://tempuri.org/ITestFilmData/DeleteDirectorResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/DeleteDirector", ReplyAction="http://tempuri.org/IFilmDataService/DeleteDirectorResponse")]
         System.Threading.Tasks.Task DeleteDirectorAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetDirectorById", ReplyAction="http://tempuri.org/ITestFilmData/GetDirectorByIdResponse")]
-        ServiceTest.FilmData.DirectorContract GetDirectorById(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetDirectorById", ReplyAction="http://tempuri.org/IFilmDataService/GetDirectorByIdResponse")]
+        FilmFactory.FilmsData.DirectorContract GetDirectorById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetDirectorById", ReplyAction="http://tempuri.org/ITestFilmData/GetDirectorByIdResponse")]
-        System.Threading.Tasks.Task<ServiceTest.FilmData.DirectorContract> GetDirectorByIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetDirectorById", ReplyAction="http://tempuri.org/IFilmDataService/GetDirectorByIdResponse")]
+        System.Threading.Tasks.Task<FilmFactory.FilmsData.DirectorContract> GetDirectorByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITestFilmDataChannel : ServiceTest.FilmData.ITestFilmData, System.ServiceModel.IClientChannel {
+    public interface IFilmDataServiceChannel : FilmFactory.FilmsData.IFilmDataService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TestFilmDataClient : System.ServiceModel.ClientBase<ServiceTest.FilmData.ITestFilmData>, ServiceTest.FilmData.ITestFilmData {
+    public partial class FilmDataServiceClient : System.ServiceModel.ClientBase<FilmFactory.FilmsData.IFilmDataService>, FilmFactory.FilmsData.IFilmDataService {
         
-        public TestFilmDataClient() {
+        public FilmDataServiceClient() {
         }
         
-        public TestFilmDataClient(string endpointConfigurationName) : 
+        public FilmDataServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public TestFilmDataClient(string endpointConfigurationName, string remoteAddress) : 
+        public FilmDataServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public TestFilmDataClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public FilmDataServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public TestFilmDataClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public FilmDataServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -428,27 +428,27 @@ namespace ServiceTest.FilmData {
             return base.Channel.CheckConnectionAsync();
         }
         
-        public ServiceTest.FilmData.FilmContract[] GetFilms() {
+        public FilmFactory.FilmsData.FilmContract[] GetFilms() {
             return base.Channel.GetFilms();
         }
         
-        public System.Threading.Tasks.Task<ServiceTest.FilmData.FilmContract[]> GetFilmsAsync() {
+        public System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> GetFilmsAsync() {
             return base.Channel.GetFilmsAsync();
         }
         
-        public void AddFilm(ServiceTest.FilmData.FilmContract film) {
+        public void AddFilm(FilmFactory.FilmsData.FilmContract film) {
             base.Channel.AddFilm(film);
         }
         
-        public System.Threading.Tasks.Task AddFilmAsync(ServiceTest.FilmData.FilmContract film) {
+        public System.Threading.Tasks.Task AddFilmAsync(FilmFactory.FilmsData.FilmContract film) {
             return base.Channel.AddFilmAsync(film);
         }
         
-        public void UpdateFilm(ServiceTest.FilmData.FilmContract film) {
+        public void UpdateFilm(FilmFactory.FilmsData.FilmContract film) {
             base.Channel.UpdateFilm(film);
         }
         
-        public System.Threading.Tasks.Task UpdateFilmAsync(ServiceTest.FilmData.FilmContract film) {
+        public System.Threading.Tasks.Task UpdateFilmAsync(FilmFactory.FilmsData.FilmContract film) {
             return base.Channel.UpdateFilmAsync(film);
         }
         
@@ -460,35 +460,35 @@ namespace ServiceTest.FilmData {
             return base.Channel.DeleteFilmAsync(id);
         }
         
-        public ServiceTest.FilmData.FilmContract GetFilmById(int id) {
+        public FilmFactory.FilmsData.FilmContract GetFilmById(int id) {
             return base.Channel.GetFilmById(id);
         }
         
-        public System.Threading.Tasks.Task<ServiceTest.FilmData.FilmContract> GetFilmByIdAsync(int id) {
+        public System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract> GetFilmByIdAsync(int id) {
             return base.Channel.GetFilmByIdAsync(id);
         }
         
-        public ServiceTest.FilmData.GenreContract[] GetGenres() {
+        public FilmFactory.FilmsData.GenreContract[] GetGenres() {
             return base.Channel.GetGenres();
         }
         
-        public System.Threading.Tasks.Task<ServiceTest.FilmData.GenreContract[]> GetGenresAsync() {
+        public System.Threading.Tasks.Task<FilmFactory.FilmsData.GenreContract[]> GetGenresAsync() {
             return base.Channel.GetGenresAsync();
         }
         
-        public void AddGenre(ServiceTest.FilmData.GenreContract genre) {
+        public void AddGenre(FilmFactory.FilmsData.GenreContract genre) {
             base.Channel.AddGenre(genre);
         }
         
-        public System.Threading.Tasks.Task AddGenreAsync(ServiceTest.FilmData.GenreContract genre) {
+        public System.Threading.Tasks.Task AddGenreAsync(FilmFactory.FilmsData.GenreContract genre) {
             return base.Channel.AddGenreAsync(genre);
         }
         
-        public void UpdateGenre(ServiceTest.FilmData.GenreContract genre) {
+        public void UpdateGenre(FilmFactory.FilmsData.GenreContract genre) {
             base.Channel.UpdateGenre(genre);
         }
         
-        public System.Threading.Tasks.Task UpdateGenreAsync(ServiceTest.FilmData.GenreContract genre) {
+        public System.Threading.Tasks.Task UpdateGenreAsync(FilmFactory.FilmsData.GenreContract genre) {
             return base.Channel.UpdateGenreAsync(genre);
         }
         
@@ -500,35 +500,35 @@ namespace ServiceTest.FilmData {
             return base.Channel.DeleteGenreAsync(id);
         }
         
-        public ServiceTest.FilmData.GenreContract GetGenreById(int id) {
+        public FilmFactory.FilmsData.GenreContract GetGenreById(int id) {
             return base.Channel.GetGenreById(id);
         }
         
-        public System.Threading.Tasks.Task<ServiceTest.FilmData.GenreContract> GetGenreByIdAsync(int id) {
+        public System.Threading.Tasks.Task<FilmFactory.FilmsData.GenreContract> GetGenreByIdAsync(int id) {
             return base.Channel.GetGenreByIdAsync(id);
         }
         
-        public ServiceTest.FilmData.DirectorContract[] GetDirector() {
+        public FilmFactory.FilmsData.DirectorContract[] GetDirector() {
             return base.Channel.GetDirector();
         }
         
-        public System.Threading.Tasks.Task<ServiceTest.FilmData.DirectorContract[]> GetDirectorAsync() {
+        public System.Threading.Tasks.Task<FilmFactory.FilmsData.DirectorContract[]> GetDirectorAsync() {
             return base.Channel.GetDirectorAsync();
         }
         
-        public void AddDirector(ServiceTest.FilmData.DirectorContract director) {
+        public void AddDirector(FilmFactory.FilmsData.DirectorContract director) {
             base.Channel.AddDirector(director);
         }
         
-        public System.Threading.Tasks.Task AddDirectorAsync(ServiceTest.FilmData.DirectorContract director) {
+        public System.Threading.Tasks.Task AddDirectorAsync(FilmFactory.FilmsData.DirectorContract director) {
             return base.Channel.AddDirectorAsync(director);
         }
         
-        public void UpdateDirector(ServiceTest.FilmData.DirectorContract director) {
+        public void UpdateDirector(FilmFactory.FilmsData.DirectorContract director) {
             base.Channel.UpdateDirector(director);
         }
         
-        public System.Threading.Tasks.Task UpdateDirectorAsync(ServiceTest.FilmData.DirectorContract director) {
+        public System.Threading.Tasks.Task UpdateDirectorAsync(FilmFactory.FilmsData.DirectorContract director) {
             return base.Channel.UpdateDirectorAsync(director);
         }
         
@@ -540,11 +540,11 @@ namespace ServiceTest.FilmData {
             return base.Channel.DeleteDirectorAsync(id);
         }
         
-        public ServiceTest.FilmData.DirectorContract GetDirectorById(int id) {
+        public FilmFactory.FilmsData.DirectorContract GetDirectorById(int id) {
             return base.Channel.GetDirectorById(id);
         }
         
-        public System.Threading.Tasks.Task<ServiceTest.FilmData.DirectorContract> GetDirectorByIdAsync(int id) {
+        public System.Threading.Tasks.Task<FilmFactory.FilmsData.DirectorContract> GetDirectorByIdAsync(int id) {
             return base.Channel.GetDirectorByIdAsync(id);
         }
     }

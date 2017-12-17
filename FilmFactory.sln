@@ -9,6 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTest", "ServiceTest\
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmFactory", "FilmFactory\FilmFactory.csproj", "{7AA41C96-2C2E-4305-9D24-2189BFA31222}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E858217-383B-499B-92F5-E23C0BEDFA9F} = {5E858217-383B-499B-92F5-E23C0BEDFA9F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfDbService", "TestService\WcfDbService.csproj", "{5E858217-383B-499B-92F5-E23C0BEDFA9F}"
 EndProject

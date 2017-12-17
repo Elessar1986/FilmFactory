@@ -61,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\FilmData\ServiceTest.FilmData.DirectorContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\FilmData\ServiceTest.FilmData.FilmContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

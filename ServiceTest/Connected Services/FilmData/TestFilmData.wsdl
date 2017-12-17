@@ -25,6 +25,12 @@
   <wsdl:message name="ITestFilmData_AddFilm_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddFilmResponse" />
   </wsdl:message>
+  <wsdl:message name="ITestFilmData_UpdateFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilm" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_UpdateFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilmResponse" />
+  </wsdl:message>
   <wsdl:message name="ITestFilmData_DeleteFilm_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteFilm" />
   </wsdl:message>
@@ -43,11 +49,59 @@
   <wsdl:message name="ITestFilmData_GetGenres_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetGenresResponse" />
   </wsdl:message>
-  <wsdl:message name="ITestFilmData_UpdateFilm_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateFilm" />
+  <wsdl:message name="ITestFilmData_AddGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGenre" />
   </wsdl:message>
-  <wsdl:message name="ITestFilmData_UpdateFilm_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateFilmResponse" />
+  <wsdl:message name="ITestFilmData_AddGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_UpdateGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGenre" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_UpdateGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_DeleteGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGenre" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_DeleteGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_GetGenreById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenreById" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_GetGenreById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenreByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_GetDirector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirector" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_GetDirector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_AddDirector_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDirector" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_AddDirector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_UpdateDirector_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDirector" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_UpdateDirector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_DeleteDirector_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirector" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_DeleteDirector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_GetDirectorById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectorById" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_GetDirectorById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectorByIdResponse" />
   </wsdl:message>
   <wsdl:portType name="ITestFilmData">
     <wsdl:operation name="CheckConnection">
@@ -62,6 +116,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/AddFilm" message="tns:ITestFilmData_AddFilm_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/AddFilmResponse" message="tns:ITestFilmData_AddFilm_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/UpdateFilm" message="tns:ITestFilmData_UpdateFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/UpdateFilmResponse" message="tns:ITestFilmData_UpdateFilm_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteFilm">
       <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/DeleteFilm" message="tns:ITestFilmData_DeleteFilm_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/DeleteFilmResponse" message="tns:ITestFilmData_DeleteFilm_OutputMessage" />
@@ -74,9 +132,41 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/GetGenres" message="tns:ITestFilmData_GetGenres_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/GetGenresResponse" message="tns:ITestFilmData_GetGenres_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateFilm">
-      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/UpdateFilm" message="tns:ITestFilmData_UpdateFilm_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/UpdateFilmResponse" message="tns:ITestFilmData_UpdateFilm_OutputMessage" />
+    <wsdl:operation name="AddGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/AddGenre" message="tns:ITestFilmData_AddGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/AddGenreResponse" message="tns:ITestFilmData_AddGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/UpdateGenre" message="tns:ITestFilmData_UpdateGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/UpdateGenreResponse" message="tns:ITestFilmData_UpdateGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/DeleteGenre" message="tns:ITestFilmData_DeleteGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/DeleteGenreResponse" message="tns:ITestFilmData_DeleteGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGenreById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/GetGenreById" message="tns:ITestFilmData_GetGenreById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/GetGenreByIdResponse" message="tns:ITestFilmData_GetGenreById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/GetDirector" message="tns:ITestFilmData_GetDirector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/GetDirectorResponse" message="tns:ITestFilmData_GetDirector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDirector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/AddDirector" message="tns:ITestFilmData_AddDirector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/AddDirectorResponse" message="tns:ITestFilmData_AddDirector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDirector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/UpdateDirector" message="tns:ITestFilmData_UpdateDirector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/UpdateDirectorResponse" message="tns:ITestFilmData_UpdateDirector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/DeleteDirector" message="tns:ITestFilmData_DeleteDirector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/DeleteDirectorResponse" message="tns:ITestFilmData_DeleteDirector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectorById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/GetDirectorById" message="tns:ITestFilmData_GetDirectorById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/GetDirectorByIdResponse" message="tns:ITestFilmData_GetDirectorById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITestFilmData" type="tns:ITestFilmData">
@@ -101,6 +191,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddFilm">
       <soap:operation soapAction="http://tempuri.org/ITestFilmData/AddFilm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFilm">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/UpdateFilm" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -135,8 +234,80 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateFilm">
-      <soap:operation soapAction="http://tempuri.org/ITestFilmData/UpdateFilm" style="document" />
+    <wsdl:operation name="AddGenre">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/AddGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenre">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/UpdateGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGenre">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/DeleteGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGenreById">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/GetGenreById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirector">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/GetDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDirector">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/AddDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDirector">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/UpdateDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirector">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/DeleteDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectorById">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/GetDirectorById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

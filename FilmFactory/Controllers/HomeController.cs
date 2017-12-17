@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using FilmFactory.DataService;
 
 namespace FilmFactory.Controllers
 {
     public class HomeController : Controller
     {
 
-        DataClient data;
-
+        FilmsData.FilmDataServiceClient client;
 
         public HomeController()
         {
-            data = new DataClient();
+            client = new FilmsData.FilmDataServiceClient();
         }
 
         public ActionResult Index()
         {
-            return View();
+            var Films = client.GetFilms();
+            return View(Films);
         }
 
         public ActionResult About()
@@ -37,10 +36,5 @@ namespace FilmFactory.Controllers
             return View();
         }
 
-        public ActionResult List()
-        {
-            var model = data.GetFilms();
-            return View(model);
-        }
     }
 }

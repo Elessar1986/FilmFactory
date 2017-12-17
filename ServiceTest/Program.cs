@@ -31,10 +31,14 @@ namespace ServiceTest
                 }
             }
 
-            var g = new List<FilmData.GenreContract>();
-            g.Add(genres[0]);
-            g.Add(genres[2]);
+            //var g = new List<FilmData.GenreContract>();
+            //g.Add(genres[2]);
+            //g.Add(genres[5]);
 
+            //var ge = genres[5];
+            //ge.GenreName = "TESTING";
+
+            //testFilmDataClient.UpdateGenre(ge);
 
             //testFilmDataClient.AddFilm(new FilmData.FilmContract()
             //{
@@ -48,12 +52,12 @@ namespace ServiceTest
 
             //});
 
-            var f = films[1];
-            f.Title = "New Film 1111";
-            f.Description = "qweqwe qweqwe qweqwe";
-            f.Genre = g.ToArray();
+            //var f = films[1];
+            //f.Title = "New Film 13131313";
+            //f.Description = "qweqwe qweqwe qweqwe";
+            //f.Genre = g.ToArray();
 
-            testFilmDataClient.UpdateFilm(f);
+            //testFilmDataClient.UpdateFilm(f);
 
             //testFilmDataClient.DeleteFilm(f.Id);
 

@@ -46,7 +46,7 @@ namespace Repository.Concrette
             return dbSet;
         }
 
-        public void Update(T item)
+        public virtual void Update(T item)
         {
             context.Entry(item).State = EntityState.Modified;
         }

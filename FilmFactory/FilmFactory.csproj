@@ -144,7 +144,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\DataService\Reference.cs">
+    <Compile Include="Connected Services\FilmsData\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -156,13 +156,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\DataService\Data.disco" />
-    <None Include="Connected Services\DataService\configuration91.svcinfo" />
-    <None Include="Connected Services\DataService\configuration.svcinfo" />
-    <Content Include="Connected Services\DataService\FilmFactory.DataService.film.datasource">
+    <Content Include="Connected Services\FilmsData\FilmFactory.FilmsData.DirectorContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\DataService\Reference.svcmap">
+    <Content Include="Connected Services\FilmsData\FilmFactory.FilmsData.FilmContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\FilmsData\FilmFactory.FilmsData.GenreContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\FilmsData\TestFilmData.disco" />
+    <None Include="Connected Services\FilmsData\configuration91.svcinfo" />
+    <None Include="Connected Services\FilmsData\configuration.svcinfo" />
+    <None Include="Connected Services\FilmsData\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -177,16 +183,16 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Connected Services\DataService\Data.xsd">
+    <None Include="Connected Services\FilmsData\TestFilmData.wsdl" />
+    <None Include="Connected Services\FilmsData\TestFilmData.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DataService\Data1.xsd">
+    <None Include="Connected Services\FilmsData\TestFilmData1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DataService\Data2.xsd">
+    <None Include="Connected Services\FilmsData\TestFilmData2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DataService\Service1.wsdl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -235,7 +241,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\DataService\" />
+    <WCFMetadataStorage Include="Connected Services\FilmsData\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -19,7 +19,7 @@ namespace TestService
         List<FilmContract> GetFilms();
 
         [OperationContract]
-        void AddOrUpdateFilm(FilmContract film);
+        void AddFilm(FilmContract film);
 
         [OperationContract]
         void DeleteFilm(int id);
@@ -29,6 +29,9 @@ namespace TestService
 
         [OperationContract]
         List<GenreContract> GetGenres();
+
+        [OperationContract]
+        void UpdateFilm(FilmContract film);
 
     }
 

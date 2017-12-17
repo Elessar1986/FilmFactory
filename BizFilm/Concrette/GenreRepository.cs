@@ -9,6 +9,6 @@ namespace Repository.Concrette
 {
     public class GenreRepository : GeneralRepositiry<genre>
     {
-        public GenreRepository() { }
+        public GenreRepository(FilmDB context) : base(context) { }
     }
 }

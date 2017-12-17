@@ -56,9 +56,6 @@
     <Compile Include="Concrette\GeneralRepositiry.cs" />
     <Compile Include="Concrette\FilmRepository.cs" />
     <Compile Include="Concrette\GenreRepository.cs" />
-    <Compile Include="Model\BizDirector.cs" />
-    <Compile Include="Model\BizFilm.cs" />
-    <Compile Include="Model\BizGenre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOnWork\UnitOnWork.cs" />
   </ItemGroup>

@@ -25,14 +25,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddOrUpdateFilm">
+  <xs:element name="AddFilm">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TestService.DataContract" minOccurs="0" name="film" nillable="true" type="q2:FilmContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddOrUpdateFilmResponse">
+  <xs:element name="AddFilmResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -73,6 +73,18 @@
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TestService.DataContract" minOccurs="0" name="GetGenresResult" nillable="true" type="q4:ArrayOfGenreContract" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TestService.DataContract" minOccurs="0" name="film" nillable="true" type="q5:FilmContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilmResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

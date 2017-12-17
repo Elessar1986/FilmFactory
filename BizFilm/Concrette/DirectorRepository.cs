@@ -9,6 +9,9 @@ namespace Repository.Concrette
 {
     public class DirectorRepository : GeneralRepositiry<director>
     {
-        public DirectorRepository() { }
+        public DirectorRepository(FilmDB context) : base(context)
+        {
+
+        }
     }
 }

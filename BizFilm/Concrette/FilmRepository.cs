@@ -9,7 +9,7 @@ namespace Repository.Concrette
 {
     public class FilmRepository : GeneralRepositiry<films>
     {
-        public FilmRepository() 
+        public FilmRepository(FilmDB context) : base(context) 
         {
         }
     }

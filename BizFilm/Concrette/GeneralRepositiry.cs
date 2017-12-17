@@ -15,23 +15,20 @@ namespace Repository.Concrette
         FilmDB context;
         IDbSet<T> dbSet;
 
-        public GeneralRepositiry()
+        public GeneralRepositiry(FilmDB context)
         {
-            this.context = new FilmDB();
+            this.context = context;
             dbSet = context.Set<T>();
         }
 
-        public void AddOrUpdate(T obj)
+        public void Create(T obj)
         {
-            dbSet.AddOrUpdate(obj);
-            
-            context.SaveChanges();
+            dbSet.Add(obj);
         }
 
         public void Delete(T obj)
         {
             dbSet.Remove(obj);
-            context.SaveChanges();
         }
 
         //public IEnumerable<T> FindBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
@@ -49,26 +46,9 @@ namespace Repository.Concrette
             return dbSet;
         }
 
-        #region IDisposable Support
-        private bool disposedValue = false; 
-
-        protected virtual void Dispose(bool disposing)
+        public void Update(T item)
         {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-                    context.Dispose();
-                }
-                disposedValue = true;
-            }
+            context.Entry(item).State = EntityState.Modified;
         }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-        #endregion
     }
 }

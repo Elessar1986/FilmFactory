@@ -247,11 +247,11 @@ namespace ServiceTest.FilmData {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetFilms", ReplyAction="http://tempuri.org/ITestFilmData/GetFilmsResponse")]
         System.Threading.Tasks.Task<ServiceTest.FilmData.FilmContract[]> GetFilmsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddOrUpdateFilm", ReplyAction="http://tempuri.org/ITestFilmData/AddOrUpdateFilmResponse")]
-        void AddOrUpdateFilm(ServiceTest.FilmData.FilmContract film);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddFilm", ReplyAction="http://tempuri.org/ITestFilmData/AddFilmResponse")]
+        void AddFilm(ServiceTest.FilmData.FilmContract film);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddOrUpdateFilm", ReplyAction="http://tempuri.org/ITestFilmData/AddOrUpdateFilmResponse")]
-        System.Threading.Tasks.Task AddOrUpdateFilmAsync(ServiceTest.FilmData.FilmContract film);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/AddFilm", ReplyAction="http://tempuri.org/ITestFilmData/AddFilmResponse")]
+        System.Threading.Tasks.Task AddFilmAsync(ServiceTest.FilmData.FilmContract film);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/DeleteFilm", ReplyAction="http://tempuri.org/ITestFilmData/DeleteFilmResponse")]
         void DeleteFilm(int id);
@@ -270,6 +270,12 @@ namespace ServiceTest.FilmData {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/GetGenres", ReplyAction="http://tempuri.org/ITestFilmData/GetGenresResponse")]
         System.Threading.Tasks.Task<ServiceTest.FilmData.GenreContract[]> GetGenresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/UpdateFilm", ReplyAction="http://tempuri.org/ITestFilmData/UpdateFilmResponse")]
+        void UpdateFilm(ServiceTest.FilmData.FilmContract film);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITestFilmData/UpdateFilm", ReplyAction="http://tempuri.org/ITestFilmData/UpdateFilmResponse")]
+        System.Threading.Tasks.Task UpdateFilmAsync(ServiceTest.FilmData.FilmContract film);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -315,12 +321,12 @@ namespace ServiceTest.FilmData {
             return base.Channel.GetFilmsAsync();
         }
         
-        public void AddOrUpdateFilm(ServiceTest.FilmData.FilmContract film) {
-            base.Channel.AddOrUpdateFilm(film);
+        public void AddFilm(ServiceTest.FilmData.FilmContract film) {
+            base.Channel.AddFilm(film);
         }
         
-        public System.Threading.Tasks.Task AddOrUpdateFilmAsync(ServiceTest.FilmData.FilmContract film) {
-            return base.Channel.AddOrUpdateFilmAsync(film);
+        public System.Threading.Tasks.Task AddFilmAsync(ServiceTest.FilmData.FilmContract film) {
+            return base.Channel.AddFilmAsync(film);
         }
         
         public void DeleteFilm(int id) {
@@ -345,6 +351,14 @@ namespace ServiceTest.FilmData {
         
         public System.Threading.Tasks.Task<ServiceTest.FilmData.GenreContract[]> GetGenresAsync() {
             return base.Channel.GetGenresAsync();
+        }
+        
+        public void UpdateFilm(ServiceTest.FilmData.FilmContract film) {
+            base.Channel.UpdateFilm(film);
+        }
+        
+        public System.Threading.Tasks.Task UpdateFilmAsync(ServiceTest.FilmData.FilmContract film) {
+            return base.Channel.UpdateFilmAsync(film);
         }
     }
 }

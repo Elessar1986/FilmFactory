@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Repository.Abstract
 {
-    public interface IRepository<T> : IDisposable where T : class, new()
+    public interface IRepository<T> where T : class, new()
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
-        void AddOrUpdate(T item);
+        void Create(T item);
+        void Update(T item);
         void Delete(T item);
         //void Save();
     }

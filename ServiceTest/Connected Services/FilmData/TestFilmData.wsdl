@@ -19,11 +19,11 @@
   <wsdl:message name="ITestFilmData_GetFilms_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFilmsResponse" />
   </wsdl:message>
-  <wsdl:message name="ITestFilmData_AddOrUpdateFilm_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddOrUpdateFilm" />
+  <wsdl:message name="ITestFilmData_AddFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFilm" />
   </wsdl:message>
-  <wsdl:message name="ITestFilmData_AddOrUpdateFilm_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddOrUpdateFilmResponse" />
+  <wsdl:message name="ITestFilmData_AddFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFilmResponse" />
   </wsdl:message>
   <wsdl:message name="ITestFilmData_DeleteFilm_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteFilm" />
@@ -43,6 +43,12 @@
   <wsdl:message name="ITestFilmData_GetGenres_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetGenresResponse" />
   </wsdl:message>
+  <wsdl:message name="ITestFilmData_UpdateFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilm" />
+  </wsdl:message>
+  <wsdl:message name="ITestFilmData_UpdateFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilmResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITestFilmData">
     <wsdl:operation name="CheckConnection">
       <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/CheckConnection" message="tns:ITestFilmData_CheckConnection_InputMessage" />
@@ -52,9 +58,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/GetFilms" message="tns:ITestFilmData_GetFilms_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/GetFilmsResponse" message="tns:ITestFilmData_GetFilms_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddOrUpdateFilm">
-      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/AddOrUpdateFilm" message="tns:ITestFilmData_AddOrUpdateFilm_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/AddOrUpdateFilmResponse" message="tns:ITestFilmData_AddOrUpdateFilm_OutputMessage" />
+    <wsdl:operation name="AddFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/AddFilm" message="tns:ITestFilmData_AddFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/AddFilmResponse" message="tns:ITestFilmData_AddFilm_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteFilm">
       <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/DeleteFilm" message="tns:ITestFilmData_DeleteFilm_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="GetGenres">
       <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/GetGenres" message="tns:ITestFilmData_GetGenres_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/GetGenresResponse" message="tns:ITestFilmData_GetGenres_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestFilmData/UpdateFilm" message="tns:ITestFilmData_UpdateFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestFilmData/UpdateFilmResponse" message="tns:ITestFilmData_UpdateFilm_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITestFilmData" type="tns:ITestFilmData">
@@ -89,8 +99,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddOrUpdateFilm">
-      <soap:operation soapAction="http://tempuri.org/ITestFilmData/AddOrUpdateFilm" style="document" />
+    <wsdl:operation name="AddFilm">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/AddFilm" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetGenres">
       <soap:operation soapAction="http://tempuri.org/ITestFilmData/GetGenres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFilm">
+      <soap:operation soapAction="http://tempuri.org/ITestFilmData/UpdateFilm" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

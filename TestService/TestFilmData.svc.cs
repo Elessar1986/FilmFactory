@@ -7,44 +7,52 @@ using System.Text;
 using System.Data.Entity;
 using TestService.DataContract;
 using Repository.Concrette;
-using Repository.Model;
+using Repository.UnitOnWork;
+//using Repository.Model;
 using AutoMapper;
 using Repository.Abstract;
 using FilmsDB.Model;
 
 namespace TestService
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "TestFilmData" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select TestFilmData.svc or TestFilmData.svc.cs at the Solution Explorer and start debugging.
+
     public class TestFilmData : ITestFilmData
     {
-        //IBizService<FilmService> filmData;
-        //FilmService filmsData;
-        //GenreService genreData;
-        IRepository<films> filmsData;
-        IRepository<genre> genreData;
-        IRepository<director> directorData;
+
+        UnitOnWork data = new UnitOnWork();
 
         public TestFilmData()
         {
-            filmsData = new FilmRepository();
-            genreData = new GenreRepository();
-            directorData = new DirectorRepository();
+
         }
 
-        public void AddOrUpdateFilm(FilmContract film)
+        public void AddFilm(FilmContract film)
         {
             var Film = (films)film;
             var Genres = new List<genre>();
             film.Genre.ForEach(x =>
             {
-                Genres.Add(genreData.GetById(x.Id));
+                Genres.Add(data.Genres.GetById(x.Id));
             });
             Film.genre = Genres;
-            filmsData.AddOrUpdate(Film);
+            data.Films.Create(Film);
+            data.Save();
         }
 
-
+        public void UpdateFilm(FilmContract film)
+        {
+            DeleteFilm(film.Id);
+            AddFilm(film);
+            //var Film = (films)film;
+            //var Genres = new List<genre>();
+            //film.Genre.ForEach(x =>
+            //{
+            //    Genres.Add(data.Genres.GetById(x.Id));
+            //});
+            //Film.genre = Genres;
+            //data.Films.Update(Film);
+            data.Save();
+        }
 
         public string CheckConnection()
         {
@@ -53,24 +61,25 @@ namespace TestService
 
         public void DeleteFilm(int id)
         {
-
+            var film = data.Films.GetById(id);
+            data.Films.Delete(film);
+            data.Save();
         }
 
         public FilmContract GetFilmById(int id)
         {
-            return filmsData.GetById(id);
+            return data.Films.GetById(id);
         }
 
         public List<GenreContract> GetGenres()
         {
-            return genreData.GetAll().Select(x => (GenreContract)x).ToList();
-            //return new List<GenreContract>();
+            return data.Genres.GetAll().Select(x => (GenreContract)x).ToList();
         }
 
         public List<FilmContract> GetFilms()
         {
 
-            return filmsData.GetAll().Select(x => (FilmContract)x).ToList();
+            return data.Films.GetAll().Select(x => (FilmContract)x).ToList();
 
         }
 

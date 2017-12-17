@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0cf76c14-d0db-4b67-b859-23826c6f4b4b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2870/Data.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Data.xsd" MetadataType="Schema" ID="67d7844c-78a0-4c03-84f9-9cd648ff769c" SourceId="1" SourceUrl="http://localhost:2870/Data.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="b8f947de-3349-4ce1-a326-3833419d2fc6" SourceId="1" SourceUrl="http://localhost:2870/Data.svc?wsdl" />
+    <MetadataFile FileName="Data1.xsd" MetadataType="Schema" ID="c4617c52-792f-48cf-b727-eff02c0b9edf" SourceId="1" SourceUrl="http://localhost:2870/Data.svc?xsd=xsd1" />
+    <MetadataFile FileName="Data.disco" MetadataType="Disco" ID="c4404a7c-4287-4273-b359-d35414c83047" SourceId="1" SourceUrl="http://localhost:2870/Data.svc?disco" />
+    <MetadataFile FileName="Data2.xsd" MetadataType="Schema" ID="93ae4606-b968-41a9-a6b3-e80d562177d2" SourceId="1" SourceUrl="http://localhost:2870/Data.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

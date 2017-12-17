@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e601c005-e30e-40cc-a87e-adfef007cfd6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2356/TestFilmData.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TestFilmData.disco" MetadataType="Disco" ID="6c0b0f6d-8fb0-4c4f-a1c1-444abc6aad04" SourceId="1" SourceUrl="http://localhost:2356/TestFilmData.svc?disco" />
+    <MetadataFile FileName="TestFilmData.xsd" MetadataType="Schema" ID="4a87a872-55e8-4be2-b457-0754b9178e63" SourceId="1" SourceUrl="http://localhost:2356/TestFilmData.svc?xsd=xsd1" />
+    <MetadataFile FileName="TestFilmData1.xsd" MetadataType="Schema" ID="7e7614d9-e7d1-463e-b5c8-f8fe6738f895" SourceId="1" SourceUrl="http://localhost:2356/TestFilmData.svc?xsd=xsd2" />
+    <MetadataFile FileName="TestFilmData2.xsd" MetadataType="Schema" ID="e4b30bc5-12b9-4e1b-8e2d-94b282d7c1eb" SourceId="1" SourceUrl="http://localhost:2356/TestFilmData.svc?xsd=xsd0" />
+    <MetadataFile FileName="TestFilmData.wsdl" MetadataType="Wsdl" ID="9ec67e10-af02-4b14-95ba-fd3ebdcf9fd7" SourceId="1" SourceUrl="http://localhost:2356/TestFilmData.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

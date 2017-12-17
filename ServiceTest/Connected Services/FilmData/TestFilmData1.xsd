@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TestService.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TestService.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFilmContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilmContract" nillable="true" type="tns:FilmContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilmContract" nillable="true" type="tns:ArrayOfFilmContract" />
+  <xs:complexType name="FilmContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DirectorId" type="xs:int" />
+      <xs:element minOccurs="0" name="Genre" nillable="true" type="tns:ArrayOfGenreContract" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="PhotoName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rate" type="xs:double" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilmContract" nillable="true" type="tns:FilmContract" />
+  <xs:complexType name="ArrayOfGenreContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenreContract" nillable="true" type="tns:GenreContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenreContract" nillable="true" type="tns:ArrayOfGenreContract" />
+  <xs:complexType name="GenreContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GenreName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenreContract" nillable="true" type="tns:GenreContract" />
+</xs:schema>

@@ -127,5 +127,11 @@ namespace TestService
         {
             return data.Director.GetById(id);
         }
+
+        public List<FilmContract> GetTop20Films()
+        {
+            var films = data.Films.GetAll().Select(x => (FilmContract)x).OrderByDescending(x => x.Rate).Take(20).ToList();
+            return films;
+        }
     }
 }

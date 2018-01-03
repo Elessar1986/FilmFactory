@@ -391,6 +391,12 @@ namespace FilmFactory.FilmsData {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetDirectorById", ReplyAction="http://tempuri.org/IFilmDataService/GetDirectorByIdResponse")]
         System.Threading.Tasks.Task<FilmFactory.FilmsData.DirectorContract> GetDirectorByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetTop20Films", ReplyAction="http://tempuri.org/IFilmDataService/GetTop20FilmsResponse")]
+        FilmFactory.FilmsData.FilmContract[] GetTop20Films();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetTop20Films", ReplyAction="http://tempuri.org/IFilmDataService/GetTop20FilmsResponse")]
+        System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> GetTop20FilmsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -546,6 +552,14 @@ namespace FilmFactory.FilmsData {
         
         public System.Threading.Tasks.Task<FilmFactory.FilmsData.DirectorContract> GetDirectorByIdAsync(int id) {
             return base.Channel.GetDirectorByIdAsync(id);
+        }
+        
+        public FilmFactory.FilmsData.FilmContract[] GetTop20Films() {
+            return base.Channel.GetTop20Films();
+        }
+        
+        public System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> GetTop20FilmsAsync() {
+            return base.Channel.GetTop20FilmsAsync();
         }
     }
 }

@@ -13,18 +13,11 @@ namespace Repository.Concrette
     public class FilmRepository : GeneralRepositiry<films>
     {
 
-        //FilmDB context;
 
-        public FilmRepository(FilmDB context) : base(context) 
+
+        public FilmRepository(FilmDB context) : base(context)
         {
-            //this.context = context;
         }
-
-        //public override void Update(films film)
-        //{
-            
-
-        //    context.SaveChanges();
-        //}
     }
+
 }

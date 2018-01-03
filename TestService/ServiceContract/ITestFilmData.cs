@@ -60,8 +60,10 @@ namespace TestService
         [OperationContract]
         DirectorContract GetDirectorById(int id);
 
-    }
+        [OperationContract]
+        List<FilmContract> GetTop20Films();
 
+        
 
-    
+    } 
 }

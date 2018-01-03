@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 
@@ -21,4 +21,22 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #9302d5;
+}
+
+a{
+    color: #9302d5;
+}
+
+.logo{
+    color: #9302d5;
+}
+
+.footer-bg-color{
+    background-color: #9302d5;
+    color: white;
 }

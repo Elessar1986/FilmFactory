@@ -10,6 +10,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DirectorId" type="xs:int" />
+      <xs:element minOccurs="0" name="DirectorName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Genre" nillable="true" type="tns:ArrayOfGenreContract" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="PhotoName" nillable="true" type="xs:string" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
+using Repository.UnitOnWork;
 
 
 namespace TestService.DataContract
@@ -20,6 +21,8 @@ namespace TestService.DataContract
         [DataMember]
         public int DirectorId { get; set; }
         [DataMember]
+        public string DirectorName { get; set; }
+        [DataMember]
         public int Year { get; set; }
         [DataMember]
         public double Rate { get; set; }
@@ -30,46 +33,6 @@ namespace TestService.DataContract
         [DataMember]
         public List<GenreContract> Genre { get; set; }
 
-        //public static implicit operator FilmContract(Repository.Model.BizFilm f)
-        //{
-        //    return
-        //        new FilmContract()
-        //        {
-        //            Description = f.Description,
-        //            DirectorId = f.DirectorID,
-        //            Id = f.Id,
-        //            Year = f.Year,
-        //            Title = f.Title,
-        //            Rate = f.Rate,
-        //            PhotoName = f.PhotoName,
-        //            Genre = f.Genre.Select(y => new GenreContract()
-        //            {
-        //                GenreName = y.Genre,
-        //                Id = y.Id
-        //            }).ToList()
-        //        };
-        //}
-
-        //public static explicit operator Repository.Model.BizFilm(FilmContract f)
-        //{
-        //    return
-        //        new Repository.Model.BizFilm()
-        //        {
-        //            Description = f.Description,
-        //            DirectorID = f.DirectorId,
-        //            Id = f.Id,
-        //            Year = f.Year,
-        //            Title = f.Title,
-        //            Rate = f.Rate,
-        //            PhotoName = f.PhotoName
-        //            ,
-        //            Genre = f.Genre.Select(y => new Repository.Model.BizGenre()
-        //            {
-        //                Genre = y.GenreName,
-        //                Id = y.Id
-        //            }).ToList()
-        //        };
-        //}
 
         public static implicit operator FilmContract(FilmsDB.Model.films f)
         {

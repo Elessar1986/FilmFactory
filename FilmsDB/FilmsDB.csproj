@@ -54,6 +54,10 @@
     <Compile Include="Model\films.cs" />
     <Compile Include="Model\genre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestModel\director.cs" />
+    <Compile Include="TestModel\films.cs" />
+    <Compile Include="TestModel\genre.cs" />
+    <Compile Include="TestModel\ModelFilmTest.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -24,6 +24,20 @@ namespace FilmFactory.Controllers
             return View(Films);
         }
 
+        //[HttpGet]
+        //public JsonResult GetFilmById(int id)
+        //{
+        //    var film = client.GetFilmById(id);
+        //    return Json(film, JsonRequestBehavior.AllowGet);
+        //}
+
+        [HttpGet]
+        public ActionResult GetFilmById(int id)
+        {
+            var film = client.GetFilmById(id);
+            return PartialView("~/Views/Film/Partials/Details.cshtml", film);
+        }
+
         public ActionResult Add()
         {
             var film = new FilmContract();

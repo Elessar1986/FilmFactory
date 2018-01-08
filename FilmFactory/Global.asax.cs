@@ -31,7 +31,7 @@ namespace FilmFactory
                 cultureName = "ru";
 
             // Список культур
-            List<string> cultures = new List<string>() { "ru", "en", "uk"};
+            List<string> cultures = new List<string>() { "ru", "en"};
             if (!cultures.Contains(cultureName))
             {
                 cultureName = "ru";

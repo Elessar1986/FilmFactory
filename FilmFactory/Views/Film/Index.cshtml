@@ -1,48 +1,30 @@
 ﻿@model IEnumerable<FilmFactory.FilmsData.FilmContract>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Resources.Resource.Films;
 }
 
-<h2>Index</h2>
+<h2>@Resources.Resource.Films</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Add")
+    <button type="button" class="btn btn-success">@Resources.Resource.AddFilm</button>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayName(Resources.Resource.Rate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DirectorId)
+            @Html.DisplayName(Resources.Resource.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhotoName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
+            @Html.DisplayName(Resources.Resource.Year)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DirectorId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhotoName)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rate)
         </td>
@@ -53,11 +35,42 @@
             @Html.DisplayFor(modelItem => item.Year)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editModal">@Resources.Resource.Edit</button>
+                <button type="button" class="btn btn-info btn-sm detailsModalBtn">@Resources.Resource.Details</button>
+                @Html.HiddenFor(modelItem => item.Id, new { @class = "filmId" })
+                
+            </div>
         </td>
     </tr>
 }
 
 </table>
+
+<div id="modalPlace">
+
+</div>
+
+<!-- Модальные окна -->
+@*<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<script>
+    var _urlGetFilmById = "@Url.Action("GetFilmById", "Film")";
+</script>
+<script src="~/Scripts/Film/film.js"></script>
+

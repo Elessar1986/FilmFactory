@@ -1,47 +1,27 @@
 ﻿@model IEnumerable<FilmFactory.FilmsData.FilmContract>
 
 @{
-    ViewBag.Title = "Top";
+    ViewBag.Title = Resources.Resource.Top20;
 }
 
-<h2>Top</h2>
+<h2>@Resources.Resource.Top20</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayName(Resources.Resource.Rate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DirectorId)
+            @Html.DisplayName(Resources.Resource.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhotoName)
+            @Html.DisplayName(Resources.Resource.Year)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DirectorId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhotoName)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rate)
         </td>
@@ -51,7 +31,23 @@
         <td>
             @Html.DisplayFor(modelItem => item.Year)
         </td>
+        <th>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-info btn-sm detailsModalBtn">@Resources.Resource.Details</button>
+                @Html.HiddenFor(modelItem => item.Id, new { @class = "filmId" })
+
+            </div>
+        </th>
     </tr>
 }
 
 </table>
+
+<div id="modalPlace">
+
+</div>
+
+<script>
+    var _urlGetFilmById = "@Url.Action("GetFilmById", "Film")";
+</script>
+<script src="~/Scripts/Film/film.js"></script>

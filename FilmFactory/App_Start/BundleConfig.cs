@@ -26,6 +26,10 @@ namespace FilmFactory
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/knockout").Include(
+                      "~/Scripts/knockout-3.4.2.debug.js",
+                      "~/Scripts/knockout-3.4.2.js"));
         }
     }
 }

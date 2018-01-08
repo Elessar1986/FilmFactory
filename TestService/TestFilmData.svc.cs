@@ -60,7 +60,9 @@ namespace TestService
 
         public FilmContract GetFilmById(int id)
         {
-            return data.Films.GetById(id);
+            FilmContract film = data.Films.GetById(id);
+            film.DirectorName = data.Director.GetById(film.DirectorId).Director1;
+            return film;
         }
 
         public List<GenreContract> GetGenres()
@@ -70,8 +72,9 @@ namespace TestService
 
         public List<FilmContract> GetFilms()
         {
-
-            return data.Films.GetAll().Select(x => (FilmContract)x).ToList();
+            List<FilmContract> films = data.Films.GetAll().Select(x => (FilmContract)x).ToList();
+            films.ForEach( x => x.DirectorName = data.Director.GetById(x.DirectorId).Director1);
+            return films;
 
         }
 

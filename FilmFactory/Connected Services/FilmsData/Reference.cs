@@ -29,6 +29,9 @@ namespace FilmFactory.FilmsData {
         private int DirectorIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DirectorNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FilmFactory.FilmsData.GenreContract[] GenreField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -78,6 +81,19 @@ namespace FilmFactory.FilmsData {
                 if ((this.DirectorIdField.Equals(value) != true)) {
                     this.DirectorIdField = value;
                     this.RaisePropertyChanged("DirectorId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DirectorName {
+            get {
+                return this.DirectorNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DirectorNameField, value) != true)) {
+                    this.DirectorNameField = value;
+                    this.RaisePropertyChanged("DirectorName");
                 }
             }
         }

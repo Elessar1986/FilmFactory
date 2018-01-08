@@ -13,7 +13,18 @@ $(".detailsModalBtn").click(function () {
 
 });
 
+$(".addModalBtn").click(function () {
 
+    console.log("ADD");
+    $.get(_urlAddFilm,
+        function (data) {
+            //console.log(data);
+            $('#modalPlace').html(data);
+            $('#addModal').modal('show');
+        },
+        "html");
+
+});
 
 
 

@@ -1,4 +1,4 @@
-﻿using FilmsDB.Model;
+﻿using FilmsDB.TestModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace Repository.Concrette
 {
     public class DirectorRepository : GeneralRepositiry<director>
     {
-        public DirectorRepository(FilmDB context) : base(context)
+        public DirectorRepository(ModelFilmTest context) : base(context)
         {
 
         }

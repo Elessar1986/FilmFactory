@@ -11,7 +11,7 @@ using Repository.UnitOnWork;
 //using Repository.Model;
 using AutoMapper;
 using Repository.Abstract;
-using FilmsDB.Model;
+using FilmsDB.TestModel;
 
 namespace TestService
 {

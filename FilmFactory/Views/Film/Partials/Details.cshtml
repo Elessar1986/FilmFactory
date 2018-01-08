@@ -9,7 +9,40 @@
                 <h4 class="modal-title" id="myModalLabel">@Html.DisplayFor(m => m.Title)</h4>
             </div>
             <div class="modal-body">
-               @Html.DisplayFor(m => m.DirectorName)
+
+                <div class="row">
+                    <div class="col-sm-4">
+
+                    </div>
+                    <div class="col-sm-4">
+                        <strong>@Html.DisplayName(Resources.Resource.Director)</strong>
+                        @Html.DisplayFor(m => m.DirectorName)
+                    </div>
+                    <div class="col-sm-4">
+                        <strong>@Html.DisplayName(Resources.Resource.Genres)</strong>
+                        <ul>
+                            @foreach (var item in Model.Genre)
+                            {
+                                <li>@Html.DisplayFor(m => item.GenreName)</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-4">
+                        <strong>@Html.DisplayName(Resources.Resource.Year)</strong>
+
+                        @Html.DisplayFor(m => m.Year)
+                    </div>
+                    <div class="col-sm-8">
+                        <strong>@Html.DisplayName(Resources.Resource.Details)</strong>
+
+                        @Html.DisplayFor(m => m.Description)
+                    </div>
+
+                </div>
+               
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

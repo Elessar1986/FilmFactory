@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FilmsDB.Model;
+using FilmsDB.TestModel;
 using Repository.Concrette;
 using System.Data.Entity;
 
@@ -11,7 +11,7 @@ namespace Repository.UnitOnWork
 {
     public class UnitOnWork : IDisposable
     {
-        private FilmDB context = new FilmDB();
+        private ModelFilmTest context = new ModelFilmTest();
 
         FilmRepository filmRepository;
         DirectorRepository directorRepository;

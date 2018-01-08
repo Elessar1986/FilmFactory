@@ -7,7 +7,7 @@
 <h2>@Resources.Resource.Films</h2>
 
 <p>
-    <button type="button" class="btn btn-success">@Resources.Resource.AddFilm</button>
+    <button type="button" class="btn btn-success addModalBtn">@Resources.Resource.AddFilm</button>
 </p>
 <table class="table">
     <tr>
@@ -71,6 +71,7 @@
 
 <script>
     var _urlGetFilmById = "@Url.Action("GetFilmById", "Film")";
+    var _urlAddFilm = "@Url.Action("AddFilm", "Film")";
 </script>
 <script src="~/Scripts/Film/film.js"></script>
 

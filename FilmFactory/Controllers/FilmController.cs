@@ -38,17 +38,16 @@ namespace FilmFactory.Controllers
             return PartialView("~/Views/Film/Partials/Details.cshtml", film);
         }
 
-        public ActionResult Add()
+        [HttpGet]
+        public ActionResult AddFilm()
         {
             var film = new FilmContract();
-            var Genres = client.GetGenres().ToList();
-            var genres = new SelectList(Genres, "Id", "GenreName");
-            ViewBag.Genres = genres;
-            return View(film);
+            GetFilmViewBag();
+            return PartialView("~/Views/Film/_AddPartial.cshtml",film);
         }
 
         [HttpPost]
-        public ActionResult Add(FilmContract film, int[] genresId)
+        public ActionResult AddFilm(FilmContract film, int[] genresId)
         {
             client.AddFilm(film);
             return RedirectToAction("Index");
@@ -59,5 +58,16 @@ namespace FilmFactory.Controllers
             var Films = client.GetTop20Films();
             return View(Films);
         }
+
+        private void GetFilmViewBag()
+        {
+            var Genres = client.GetGenres().ToList();
+            var genres = new SelectList(Genres, "Id", "GenreName");
+            ViewBag.Genres = genres;
+            var Directors = client.GetDirector().ToList();
+            var directors = new SelectList(Directors, "Id", "Director");
+            ViewBag.Directors = directors;
+        }
+
     }
 }

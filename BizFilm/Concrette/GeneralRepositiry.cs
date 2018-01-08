@@ -1,5 +1,5 @@
 ﻿using Repository.Abstract;
-using FilmsDB.Model;
+using FilmsDB.TestModel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,10 +12,10 @@ namespace Repository.Concrette
 {
     public abstract class GeneralRepositiry<T> : IRepository<T>  where T : class, new()
     {
-        FilmDB context;
+        ModelFilmTest context;
         IDbSet<T> dbSet;
 
-        public GeneralRepositiry(FilmDB context)
+        public GeneralRepositiry(ModelFilmTest context)
         {
             this.context = context;
             dbSet = context.Set<T>();

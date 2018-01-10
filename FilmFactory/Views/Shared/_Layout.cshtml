@@ -20,7 +20,7 @@
     </script>
 
        
-           <div class="container">
+           <div class="container header-bg-color">
 
                <div class="header clearfix">
                    <nav>
@@ -41,7 +41,7 @@
                                </a>
                                <ul class="dropdown-menu">
                                    <li role="presentation">@Html.ActionLink(@Resources.Resource.Genres, "Index", "Genre")</li>
-                                   <li role="presentation">@Html.ActionLink(@Resources.Resource.Director, "Index", "Genre")</li>
+                                   <li role="presentation">@Html.ActionLink(@Resources.Resource.Director, "ErrorView", "Home")</li>
                                </ul>                                               
                           </li>
                        </ul>
@@ -50,8 +50,8 @@
                </div>
                <hr/>
                <div class="text-right">
-                   @Html.ActionLink("RU", "ChangeCulture", "Home", new { lang = "ru" }, null)
-                   @Html.ActionLink("EN", "ChangeCulture", "Home", new { lang = "en" }, null)
+                  <h4><strong>@Html.ActionLink("RU", "ChangeCulture", "Home", new { lang = "ru" }, null)
+                @Html.ActionLink("EN", "ChangeCulture", "Home", new { lang = "en" }, null)</strong></h4>
                </div> 
            </div>
 
@@ -59,7 +59,7 @@
            @RenderBody()
        </div>
 
-       <div class="container footer-bg-color">
+       <div class="container footer-bg-color myFooter">
            <hr />
            <footer>
                <p>@Resources.Resource.Copyright</p>

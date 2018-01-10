@@ -1,4 +1,5 @@
 ﻿using FilmFactory.FilmsData;
+using FilmFactory.Models.Film;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,16 +42,41 @@ namespace FilmFactory.Controllers
         [HttpGet]
         public ActionResult AddFilm()
         {
-            var film = new FilmContract();
+            var film = new FilmViewModel();
             GetFilmViewBag();
             return PartialView("~/Views/Film/_AddPartial.cshtml",film);
         }
 
         [HttpPost]
-        public ActionResult AddFilm(FilmContract film, int[] genresId)
+        public ActionResult AddFilm(FilmViewModel film)
         {
-            client.AddFilm(film);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var genres = new List<GenreContract>();
+                foreach (var item in film.Genre)
+                {
+                    genres.Add(new GenreContract() { Id = item });
+                }
+                var model = new FilmContract()
+                {
+                    Description = film.Description,
+                    Rate = film.Rate,
+                    DirectorId = Int32.Parse(film.DirectorId),
+                    PhotoName = film.PhotoName,
+                    Title = film.Title,
+                    Year = film.Year,
+                    Genre = genres.ToArray()
+                };
+                client.AddFilm(model);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                //TODO: return partial in modal
+                GetFilmViewBag();
+                return PartialView("~/Views/Film/_AddPartial.cshtml", film);
+            }
+
         }
 
         public ActionResult Top()
@@ -61,12 +87,11 @@ namespace FilmFactory.Controllers
 
         private void GetFilmViewBag()
         {
-            var Genres = client.GetGenres().ToList();
-            var genres = new SelectList(Genres, "Id", "GenreName");
-            ViewBag.Genres = genres;
-            var Directors = client.GetDirector().ToList();
-            var directors = new SelectList(Directors, "Id", "Director");
-            ViewBag.Directors = directors;
+            var Genres = client.GetGenres().Select(x => new SelectListItem { Text = x.GenreName, Value = x.Id.ToString(), Selected = x.Id == 1 }).ToList();
+            ViewBag.Genre = Genres;
+
+            var Directors = client.GetDirector().Select(x => new SelectListItem { Text = x.Director, Value = x.Id.ToString(), Selected = x.Id == 1 }).ToList();
+            ViewBag.DirectorId = Directors;
         }
 
     }

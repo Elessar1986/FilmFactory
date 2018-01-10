@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using FilmsDB.TestModel;
 using Repository.Concrette;
 using System.Data.Entity;
+using BizFilm.Abstract;
 
 namespace Repository.UnitOnWork
 {
-    public class UnitOnWork : IDisposable
+    public class UnitOnWork : IUnitOfWork, IDisposable
     {
         private ModelFilmTest context = new ModelFilmTest();
 

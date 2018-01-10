@@ -55,5 +55,11 @@ namespace FilmFactory.Controllers
             return Redirect(returnUrl);
         }
 
+        public ActionResult ErrorView()
+        {
+            ViewBag.ActiveMenu = "Other";
+            return View("~/Views/Shared/Error.cshtml");
+        }
+
     }
 }

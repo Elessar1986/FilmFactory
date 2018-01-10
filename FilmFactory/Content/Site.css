@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -25,18 +25,33 @@ textarea {
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff;
-    background-color: #9302d5;
+    background-color: #9d035f;
 }
 
-a{
-    color: #9302d5;
+a {
+    color: #ffffff;
 }
 
-.logo{
-    color: #9302d5;
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 2px solid #9d035f;
 }
 
-.footer-bg-color{
-    background-color: #9302d5;
+.logo {
+    color: #ffffff;
+}
+
+.footer-bg-color {
+    background-color: #482859;
     color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.header-bg-color {
+    background-color: #482859;
+    color: white;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 15px;
 }

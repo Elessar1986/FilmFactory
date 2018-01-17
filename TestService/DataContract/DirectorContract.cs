@@ -15,7 +15,7 @@ namespace TestService.DataContract
         [DataMember]
         public string Director { get; set; }
 
-        public static implicit operator DirectorContract(FilmsDB.TestModel.director g)
+        public static implicit operator DirectorContract(FilmsDB.Model.director g)
         {
             return
                 new DirectorContract()
@@ -25,10 +25,10 @@ namespace TestService.DataContract
                 };
         }
 
-        public static explicit operator FilmsDB.TestModel.director(DirectorContract g)
+        public static explicit operator FilmsDB.Model.director(DirectorContract g)
         {
             return
-                new FilmsDB.TestModel.director()
+                new FilmsDB.Model.director()
                 {
                     Director1 = g.Director,
                     Id = g.Id

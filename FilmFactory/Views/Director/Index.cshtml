@@ -1,0 +1,27 @@
+﻿@model IEnumerable<FilmFactory.Models.Deirector.DirectorViewModel>
+
+@{
+    ViewBag.Title = @Resources.Resource.Director;
+}
+
+
+<h3><strong>@Html.DisplayName(@Resources.Resource.Director)</strong></h3>
+
+<p>
+    @Html.ActionLink(@Resources.Resource.AddDirector, "Create", "Director", null, new { @role = "button", @class = "btn btn-success active" })
+</p>
+
+
+
+
+<hr />
+
+<ol>
+
+    @foreach (var item in Model)
+    {
+
+        <li>@Html.DisplayFor(modelItem => item.Director)</li>
+    }
+</ol>
+

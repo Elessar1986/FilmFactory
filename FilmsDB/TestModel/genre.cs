@@ -1,4 +1,4 @@
-namespace FilmsDB.TestModel
+namespace FilmsDB.Model
 {
     using System;
     using System.Collections.Generic;

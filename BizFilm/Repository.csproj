@@ -53,10 +53,6 @@
   <ItemGroup>
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IUnitOfWork.cs" />
-    <Compile Include="ConcretteLocal\DirectorRepository.cs" />
-    <Compile Include="ConcretteLocal\FilmRepository.cs" />
-    <Compile Include="ConcretteLocal\GeneralRepositiry.cs" />
-    <Compile Include="ConcretteLocal\GenreRepository.cs" />
     <Compile Include="Concrette\DirectorRepository.cs" />
     <Compile Include="Concrette\GeneralRepository.cs" />
     <Compile Include="Concrette\FilmRepository.cs" />

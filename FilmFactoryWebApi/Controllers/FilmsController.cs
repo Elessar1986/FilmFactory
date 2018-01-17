@@ -10,7 +10,7 @@ namespace FilmFactoryWebApi.Controllers
 {
     public class FilmsController : ApiController
     {
-        UnitOnWork data = new UnitOnWork();
+        UnitOfWork data = new UnitOfWork("ModelFilmTest");
 
         // GET: api/Films
         public IEnumerable<string> Get()

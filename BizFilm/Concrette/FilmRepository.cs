@@ -1,4 +1,4 @@
-﻿using FilmsDB.TestModel;
+﻿using FilmsDB.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,7 +15,7 @@ namespace Repository.Concrette
 
 
 
-        public FilmRepository(ModelFilmTest context) : base(context)
+        public FilmRepository(FilmDB context) : base(context)
         {
         }
     }

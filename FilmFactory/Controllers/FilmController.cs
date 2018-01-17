@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FilmFactory.Environment.DataMapper;
 
 namespace FilmFactory.Controllers
 {
@@ -42,26 +43,13 @@ namespace FilmFactory.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddFilm(FilmViewModel film)
+        public ActionResult AddFilm(FilmViewModel film, HttpPostedFileBase fileUpload)
         {
             if (ModelState.IsValid)
             {
-                var genres = new List<GenreContract>();
-                foreach (var item in film.Genre)
-                {
-                    genres.Add(new GenreContract() { Id = item });
-                }
-                var model = new FilmContract()
-                {
-                    Description = film.Description,
-                    Rate = film.Rate,
-                    DirectorId = Int32.Parse(film.DirectorId),
-                    //PhotoName = film.PhotoName,
-                    Title = film.Title,
-                    Year = film.Year,
-                    Genre = genres.ToArray()
-                };
-                client.AddFilm(model);
+                var filmPhotoName = fileUpload != null ? fileUpload.FileName : null;
+                if(fileUpload != null) fileUpload.SaveAs(Server.MapPath("~/Files/" + filmPhotoName));
+                client.AddFilm(FilmDataMapper.getFilmContract(film, filmPhotoName));
                 return RedirectToAction("Index");
             }
             else
@@ -75,43 +63,28 @@ namespace FilmFactory.Controllers
         [HttpGet]
         public ActionResult EditFilm(int id)
         {
-            var film = client.GetFilmById(id);
-            var filmVM = new FilmViewModel()
-            {
-                Id = film.Id,
-                Title = film.Title,
-                DirectorId = film.DirectorId.ToString(),
-                Description = film.Description,
-                Genre = film.Genre.Select(x => x.Id).ToArray(),
-                Rate = film.Rate,
-                Year = film.Year
-            };
+            var film = FilmDataMapper.getFilmViewModel( client.GetFilmById(id));
             GetFilmViewBag();
-            return View("~/Views/Film/Edit.cshtml", filmVM);
+            return View("~/Views/Film/Edit.cshtml", film);
         }
 
         [HttpPost]
-        public ActionResult EditFilm(FilmViewModel film)
+        public ActionResult EditFilm(FilmViewModel film, HttpPostedFileBase fileUpload)
         {
             if (ModelState.IsValid)
             {
-                var genres = new List<GenreContract>();
-                foreach (var item in film.Genre)
+                var photoNameOld = client.GetFilmById(film.Id).PhotoName;
+                if (fileUpload != null && photoNameOld != fileUpload.FileName)
                 {
-                    genres.Add(new GenreContract() { Id = item });
+                    string fullPath = Request.MapPath("~/Files/" + photoNameOld);
+                    if (System.IO.File.Exists(fullPath))
+                    {
+                        System.IO.File.Delete(fullPath);
+                    }
+                    fileUpload.SaveAs(Server.MapPath("~/Files/" + fileUpload.FileName));
+                    photoNameOld = fileUpload.FileName;
                 }
-                var model = new FilmContract()
-                {
-                    Id = film.Id,
-                    Description = film.Description,
-                    Rate = film.Rate,
-                    DirectorId = Int32.Parse(film.DirectorId),
-                    //PhotoName = film.PhotoName,
-                    Title = film.Title,
-                    Year = film.Year,
-                    Genre = genres.ToArray()
-                };
-                client.UpdateFilm(model);
+                client.UpdateFilm(FilmDataMapper.getFilmContract(film, photoNameOld));
                 return RedirectToAction("Index");
             }
             else
@@ -130,10 +103,10 @@ namespace FilmFactory.Controllers
 
         private void GetFilmViewBag()
         {
-            var Genres = client.GetGenres().Select(x => new SelectListItem { Text = x.GenreName, Value = x.Id.ToString(), Selected = x.Id == 1 }).ToList();
+            var Genres = client.GetGenres().Select(x => new SelectListItem { Text = x.GenreName, Value = x.Id.ToString() }).ToList();
             ViewBag.Genre = Genres;
 
-            var Directors = client.GetDirector().Select(x => new SelectListItem { Text = x.Director, Value = x.Id.ToString(), Selected = x.Id == 1 }).ToList();
+            var Directors = client.GetDirector().Select(x => new SelectListItem { Text = x.Director, Value = x.Id.ToString(), Selected = x.Id == 20 }).ToList();
             ViewBag.DirectorId = Directors;
         }
 

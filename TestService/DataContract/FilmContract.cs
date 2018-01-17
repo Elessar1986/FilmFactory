@@ -34,7 +34,7 @@ namespace TestService.DataContract
         public List<GenreContract> Genre { get; set; }
 
 
-        public static implicit operator FilmContract(FilmsDB.TestModel.films f)
+        public static implicit operator FilmContract(FilmsDB.Model.films f)
         {
             return
                 new FilmContract()
@@ -54,10 +54,10 @@ namespace TestService.DataContract
                 };
         }
 
-        public static explicit operator FilmsDB.TestModel.films(FilmContract f)
+        public static explicit operator FilmsDB.Model.films(FilmContract f)
         {
             return
-                new FilmsDB.TestModel.films()
+                new FilmsDB.Model.films()
                 {
                     Description = f.Description,
                     DirectorID = f.DirectorId,
@@ -67,7 +67,7 @@ namespace TestService.DataContract
                     Rate = f.Rate,
                     PhotoName = f.PhotoName
                     ,
-                    genre = f.Genre.Select(y => new FilmsDB.TestModel.genre()
+                    genre = f.Genre.Select(y => new FilmsDB.Model.genre()
                     {
                         Genre1 = y.GenreName,
                         Id = y.Id

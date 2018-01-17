@@ -17,7 +17,7 @@ namespace FilmFactory.Models.Film
 
         [Display(Name = "Director", ResourceType = typeof(Resources.Resource))]
         [Required(ErrorMessageResourceType = typeof(Resources.Resource), ErrorMessageResourceName = "ErrorMessageRequired")]
-        public string DirectorId { get; set; }
+        public int DirectorId { get; set; }
 
         //public string DirectorName { get; set; }
 

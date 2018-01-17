@@ -1,5 +1,5 @@
 ﻿using System;
-using FilmsDB.TestModel;
+using FilmsDB.Model;
 using System.Data.Entity;
 
 using Repository.Concrette;
@@ -7,14 +7,24 @@ using Repository.Abstract;
 
 namespace Repository.UnitOnWork
 {
-    public class UnitOnWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
-        private ModelFilmTest context = new ModelFilmTest();
+        //private ModelFilmTest context = new ModelFilmTest();
+
+        //FilmRepository filmRepository;
+        //DirectorRepository directorRepository;
+        //GenreRepository genreRepository;
+
+        private FilmDB context;
 
         FilmRepository filmRepository;
         DirectorRepository directorRepository;
         GenreRepository genreRepository;
 
+        public UnitOfWork(string conectionString)
+        {
+            context = new FilmDB(conectionString);
+        }
         public IRepository<films> Films
         {
             get

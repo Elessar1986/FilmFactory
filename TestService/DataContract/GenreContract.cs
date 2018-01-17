@@ -34,7 +34,7 @@ namespace TestService.DataContract
         //        };
         //}
 
-        public static implicit operator GenreContract(FilmsDB.TestModel.genre g)
+        public static implicit operator GenreContract(FilmsDB.Model.genre g)
         {
             return
                 new GenreContract()
@@ -44,10 +44,10 @@ namespace TestService.DataContract
                 };
         }
 
-        public static explicit operator FilmsDB.TestModel.genre(GenreContract g)
+        public static explicit operator FilmsDB.Model.genre(GenreContract g)
         {
             return
-                new FilmsDB.TestModel.genre()
+                new FilmsDB.Model.genre()
                 {
                     Genre1 = g.GenreName,
                     Id = g.Id

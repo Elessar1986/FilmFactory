@@ -6,11 +6,11 @@ using System.ServiceModel;
 using System.Text;
 using System.Data.Entity;
 using TestService.DataContract;
-using Repository.ConcretteLocal;
+using Repository.Concrette;
 using Repository.UnitOnWork;
 using Repository.Abstract;
 using AutoMapper;
-using FilmsDB.TestModel;
+using FilmsDB.Model;
 
 namespace TestService
 {
@@ -18,8 +18,7 @@ namespace TestService
     public class FilmDataService : IFilmDataService
     {
 
-        //IUnitOfWork data = new UnitOfWorkLocal("FilmDB");
-        IUnitOfWork data = new UnitOnWork();
+        IUnitOfWork data = new UnitOfWork("ModelFilmTest");
 
         public FilmDataService()
         {

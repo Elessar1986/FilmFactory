@@ -1,4 +1,4 @@
-﻿using FilmsDB.TestModel;
+﻿using FilmsDB.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace Repository.Concrette
 {
     public class GenreRepository : GeneralRepository<genre>
     {
-        public GenreRepository(ModelFilmTest context) : base(context) { }
+        public GenreRepository(FilmDB context) : base(context) { }
     }
 }

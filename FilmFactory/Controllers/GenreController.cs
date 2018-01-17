@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using FilmFactory.FilmsData;
 using FilmFactory.Models.Genre;
 using AutoMapper;
+using FilmFactory.Models.Shared;
 
 namespace FilmFactory.Controllers
 {
@@ -36,22 +37,30 @@ namespace FilmFactory.Controllers
         [HttpPost]
         public ActionResult Add(GenreViewModel genre)
         {
-            if (ModelState.IsValid)
+            try
             {
-                Mapper.Reset();
-                Mapper.Initialize(cfg => cfg.CreateMap<GenreViewModel, GenreContract>());
-                var genreData = Mapper.Map<GenreViewModel, GenreContract>(genre);
 
-                //var g = new GenreContract()
-                //{
-                //    GenreName = genre.GenreName
-                //};
-                client.AddGenre(genreData);
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    Mapper.Reset();
+                    Mapper.Initialize(cfg => cfg.CreateMap<GenreViewModel, GenreContract>());
+                    var genreData = Mapper.Map<GenreViewModel, GenreContract>(genre);
+
+                    client.AddGenre(genreData);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(genre);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return View(genre);
+                var error = new ErrorViewModel()
+                {
+                    ErrorMessage = ex.Message
+                };
+                return View("~/Views/Shared/Error.cshtml", error);
             }
         }
 

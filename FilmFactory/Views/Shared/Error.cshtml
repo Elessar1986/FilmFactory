@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model FilmFactory.Models.Shared.ErrorViewModel
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -8,6 +10,11 @@
     <hgroup>
         <h1>Error.</h1>
         <h2>An error occurred while processing your request.</h2>
+        <hr />
+        <h3>@Model.ErrorMessage</h3>
+
+        <hr />
+        <h3>@Model.MessageForUser</h3>
     </hgroup>
 </body>
 </html>

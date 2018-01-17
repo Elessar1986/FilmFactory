@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using FilmFactory.FilmsData;
 using FilmFactory.Models.Deirector;
+using FilmFactory.Models.Shared;
 
 namespace FilmFactory.Controllers
 {
@@ -38,22 +39,36 @@ namespace FilmFactory.Controllers
         // GET: Director/Create
         public ActionResult Create()
         {
-            return View(new DirectorViewModel());
+            var dir = new DirectorViewModel();
+            return View(dir);
         }
 
         // POST: Director/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(DirectorViewModel DIR)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    Mapper.Reset();
+                    Mapper.Initialize(cfg => cfg.CreateMap<DirectorViewModel, DirectorContract>());
+                    client.AddDirector(Mapper.Map<DirectorViewModel, DirectorContract>(DIR));
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(DIR);
+                }
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                var error = new ErrorViewModel()
+                {
+                    ErrorMessage = ex.Message
+                };
+                return View("~/Views/Shared/Error.cshtml", error);
             }
         }
 

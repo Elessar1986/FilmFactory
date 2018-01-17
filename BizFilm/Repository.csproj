@@ -58,7 +58,6 @@
     <Compile Include="Concrette\FilmRepository.cs" />
     <Compile Include="Concrette\GenreRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitOnWork\UnitOfWorkLocal.cs" />
     <Compile Include="UnitOnWork\UnitOnWork.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -8,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.Concrette
+namespace Repository.ConcretteLocal
 {
     public class FilmRepository : GeneralRepository<films>
     {
 
 
 
-        public FilmRepository(ModelFilmTest context) : base(context)
+        public FilmRepository(FilmDB context) : base(context)
         {
         }
     }

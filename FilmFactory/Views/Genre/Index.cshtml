@@ -1,33 +1,25 @@
 ﻿@model IEnumerable<FilmFactory.FilmsData.GenreContract>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @Resources.Resource.Genres;
 }
 
-<h2>Index</h2>
+<h3><strong>@Html.DisplayName(@Resources.Resource.Genres)</strong></h3>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(@Resources.Resource.AddGenre, "AddGenre", "Genre", null, new { @role = "button", @class = "btn btn-success active" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.GenreName)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.GenreName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
 
-</table>
+    
+
+ <hr />
+
+ <ol>
+
+    @foreach (var item in Model)
+    {
+
+        <li>@Html.DisplayFor(modelItem => item.GenreName)</li>
+    }
+ </ol>

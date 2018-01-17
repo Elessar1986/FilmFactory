@@ -1,4 +1,4 @@
-namespace FilmsDB.Model
+namespace FilmsDB.TestModel
 {
     using System;
     using System.Data.Entity;
@@ -7,6 +7,11 @@ namespace FilmsDB.Model
 
     public partial class FilmDB : DbContext
     {
+        public FilmDB(string connectionString)
+            : base(connectionString)
+        {
+        }
+
         public FilmDB()
             : base("name=FilmDB")
         {

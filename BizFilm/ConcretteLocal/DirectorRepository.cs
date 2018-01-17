@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.Concrette
+namespace Repository.ConcretteLocal
 {
     public class DirectorRepository : GeneralRepository<director>
     {
-        public DirectorRepository(ModelFilmTest context) : base(context)
+        public DirectorRepository(FilmDB context) : base(context)
         {
 
         }

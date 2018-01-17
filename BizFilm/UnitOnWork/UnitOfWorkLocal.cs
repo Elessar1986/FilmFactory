@@ -1,19 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using FilmsDB.TestModel;
-using System.Data.Entity;
-
-using Repository.Concrette;
+using Repository.ConcretteLocal;
 using Repository.Abstract;
 
 namespace Repository.UnitOnWork
 {
-    public class UnitOnWork : IUnitOfWork
+    public class UnitOfWorkLocal : IUnitOfWork
     {
-        private ModelFilmTest context = new ModelFilmTest();
+        private FilmDB context;
 
         FilmRepository filmRepository;
         DirectorRepository directorRepository;
         GenreRepository genreRepository;
+
+        public UnitOfWorkLocal(string conectionString)
+        {
+            context = new FilmDB(conectionString);
+        }
 
         public IRepository<films> Films
         {

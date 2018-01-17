@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.Concrette
+namespace Repository.ConcretteLocal
 {
     public class GenreRepository : GeneralRepository<genre>
     {
-        public GenreRepository(ModelFilmTest context) : base(context) { }
+        public GenreRepository(FilmDB context) : base(context) { }
     }
 }

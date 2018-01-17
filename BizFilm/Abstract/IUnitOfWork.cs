@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FilmsDB.TestModel;
 
-namespace BizFilm.Abstract
+namespace Repository.Abstract
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
-
-
+        IRepository<films> Films { get; }
+        IRepository<genre> Genres { get; }
+        IRepository<director> Director { get; }
+        void Save();
     }
 }

@@ -25,12 +25,6 @@ namespace FilmFactory.Controllers
             return View(Films);
         }
 
-        //[HttpGet]
-        //public JsonResult GetFilmById(int id)
-        //{
-        //    var film = client.GetFilmById(id);
-        //    return Json(film, JsonRequestBehavior.AllowGet);
-        //}
 
         [HttpGet]
         public ActionResult GetFilmById(int id)
@@ -44,7 +38,7 @@ namespace FilmFactory.Controllers
         {
             var film = new FilmViewModel();
             GetFilmViewBag();
-            return PartialView("~/Views/Film/_AddPartial.cshtml",film);
+            return View("~/Views/Film/Add.cshtml",film);
         }
 
         [HttpPost]
@@ -62,7 +56,7 @@ namespace FilmFactory.Controllers
                     Description = film.Description,
                     Rate = film.Rate,
                     DirectorId = Int32.Parse(film.DirectorId),
-                    PhotoName = film.PhotoName,
+                    //PhotoName = film.PhotoName,
                     Title = film.Title,
                     Year = film.Year,
                     Genre = genres.ToArray()
@@ -72,9 +66,58 @@ namespace FilmFactory.Controllers
             }
             else
             {
-                //TODO: return partial in modal
                 GetFilmViewBag();
-                return PartialView("~/Views/Film/_AddPartial.cshtml", film);
+                return View("~/Views/Film/Add.cshtml", film);
+            }
+
+        }
+
+        [HttpGet]
+        public ActionResult EditFilm(int id)
+        {
+            var film = client.GetFilmById(id);
+            var filmVM = new FilmViewModel()
+            {
+                Id = film.Id,
+                Title = film.Title,
+                DirectorId = film.DirectorId.ToString(),
+                Description = film.Description,
+                Genre = film.Genre.Select(x => x.Id).ToArray(),
+                Rate = film.Rate,
+                Year = film.Year
+            };
+            GetFilmViewBag();
+            return View("~/Views/Film/Edit.cshtml", filmVM);
+        }
+
+        [HttpPost]
+        public ActionResult EditFilm(FilmViewModel film)
+        {
+            if (ModelState.IsValid)
+            {
+                var genres = new List<GenreContract>();
+                foreach (var item in film.Genre)
+                {
+                    genres.Add(new GenreContract() { Id = item });
+                }
+                var model = new FilmContract()
+                {
+                    Id = film.Id,
+                    Description = film.Description,
+                    Rate = film.Rate,
+                    DirectorId = Int32.Parse(film.DirectorId),
+                    //PhotoName = film.PhotoName,
+                    Title = film.Title,
+                    Year = film.Year,
+                    Genre = genres.ToArray()
+                };
+                client.UpdateFilm(model);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                GetFilmViewBag();
+                return View("~/Views/Film/Edit.cshtml", film);
             }
 
         }

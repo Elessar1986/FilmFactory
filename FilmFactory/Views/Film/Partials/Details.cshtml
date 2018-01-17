@@ -14,12 +14,17 @@
                     <div class="col-sm-4">
 
                     </div>
-                    <div class="col-sm-4">
-                        <strong>@Html.DisplayName(Resources.Resource.Director)</strong>
-                        @Html.DisplayFor(m => m.DirectorName)
-                    </div>
-                    <div class="col-sm-4">
-                        <strong>@Html.DisplayName(Resources.Resource.Genres)</strong>
+                    <div class="col-sm-8">
+                        <p><strong>@Html.DisplayName(Resources.Resource.Director) :</strong>
+                        @Html.DisplayFor(m => m.DirectorName)</p>
+
+                        <p><strong>@Html.DisplayName(Resources.Resource.Year) :</strong>
+                        @Html.DisplayFor(m => m.Year)</p>
+
+                        <p><strong>@Html.DisplayName(Resources.Resource.Rate) :</strong>
+                        @Html.DisplayFor(m => m.Rate)</p>
+
+                        <strong>@Html.DisplayName(Resources.Resource.Genres) :</strong>
                         <ul>
                             @foreach (var item in Model.Genre)
                             {
@@ -30,11 +35,7 @@
                 </div>
                 <hr />
                 <div class="row">
-                    <div class="col-sm-4">
-                        <strong>@Html.DisplayName(Resources.Resource.Year)</strong>
 
-                        @Html.DisplayFor(m => m.Year)
-                    </div>
                     <div class="col-sm-8">
                         <strong>@Html.DisplayName(Resources.Resource.Details)</strong>
 

@@ -120,6 +120,9 @@
   <data name="AddFilm" xml:space="preserve">
     <value>Add film</value>
   </data>
+  <data name="AddGenre" xml:space="preserve">
+    <value>Add genre</value>
+  </data>
   <data name="AllFilms" xml:space="preserve">
     <value>All Films</value>
   </data>
@@ -129,6 +132,9 @@
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
   </data>
@@ -137,6 +143,12 @@
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
+  </data>
+  <data name="ErrorMessageRequired" xml:space="preserve">
+    <value>This field is required</value>
+  </data>
+  <data name="ErrorMessageWrongNum" xml:space="preserve">
+    <value>Wrong value</value>
   </data>
   <data name="Films" xml:space="preserve">
     <value>Films</value>

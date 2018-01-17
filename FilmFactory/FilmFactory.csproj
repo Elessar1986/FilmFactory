@@ -348,9 +348,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Film\Index.cshtml" />
     <Content Include="Views\Film\Top.cshtml" />
-    <Content Include="Views\Film\Add.cshtml" />
     <Content Include="Views\Film\Partials\Details.cshtml" />
-    <Content Include="Views\Film\_AddPartial.cshtml" />
+    <Content Include="Views\Film\Add.cshtml" />
+    <Content Include="Views\Film\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,6 +10,7 @@ namespace Repository.Abstract
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
+        IEnumerable<T> Find(Func<T, bool> predicat);
         void Create(T item);
         void Update(T item);
         void Delete(T item);

@@ -109,6 +109,18 @@
   <wsdl:message name="IFilmDataService_GetTop20Films_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTop20FilmsResponse" />
   </wsdl:message>
+  <wsdl:message name="IFilmDataService_FindFilmByDirector_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindFilmByDirector" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_FindFilmByDirector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindFilmByDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_FindFilmByGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindFilmByGenre" />
+  </wsdl:message>
+  <wsdl:message name="IFilmDataService_FindFilmByGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindFilmByGenreResponse" />
+  </wsdl:message>
   <wsdl:portType name="IFilmDataService">
     <wsdl:operation name="CheckConnection">
       <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/CheckConnection" message="tns:IFilmDataService_CheckConnection_InputMessage" />
@@ -177,6 +189,14 @@
     <wsdl:operation name="GetTop20Films">
       <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/GetTop20Films" message="tns:IFilmDataService_GetTop20Films_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/GetTop20FilmsResponse" message="tns:IFilmDataService_GetTop20Films_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindFilmByDirector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/FindFilmByDirector" message="tns:IFilmDataService_FindFilmByDirector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/FindFilmByDirectorResponse" message="tns:IFilmDataService_FindFilmByDirector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindFilmByGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFilmDataService/FindFilmByGenre" message="tns:IFilmDataService_FindFilmByGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFilmDataService/FindFilmByGenreResponse" message="tns:IFilmDataService_FindFilmByGenre_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IFilmDataService" type="tns:IFilmDataService">
@@ -327,6 +347,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetTop20Films">
       <soap:operation soapAction="http://tempuri.org/IFilmDataService/GetTop20Films" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindFilmByDirector">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/FindFilmByDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindFilmByGenre">
+      <soap:operation soapAction="http://tempuri.org/IFilmDataService/FindFilmByGenre" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

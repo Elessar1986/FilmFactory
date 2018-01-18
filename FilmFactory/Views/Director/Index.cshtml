@@ -21,7 +21,8 @@
     @foreach (var item in Model)
     {
 
-        <li>@Html.DisplayFor(modelItem => item.Director)</li>
+        @*<li>@Html.DisplayFor(modelItem => item.Director)</li>*@
+        <li>@Html.ActionLink(item.Director, "FindFilm", "Film", new {  DirectorId = item.Id  }, new { @class = "director-link" } ) </li>
     }
 </ol>
 

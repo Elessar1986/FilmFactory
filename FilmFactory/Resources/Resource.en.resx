@@ -123,11 +123,17 @@
   <data name="AddFilm" xml:space="preserve">
     <value>Add film</value>
   </data>
+  <data name="AddFoto" xml:space="preserve">
+    <value>Add photo</value>
+  </data>
   <data name="AddGenre" xml:space="preserve">
     <value>Add genre</value>
   </data>
   <data name="AllFilms" xml:space="preserve">
     <value>All Films</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back to list</value>
   </data>
   <data name="Copyright" xml:space="preserve">
     <value>© Copyright ,2018 - Ivan Arepiev , All right reserved / ASP.NET Application</value>
@@ -156,6 +162,18 @@
   <data name="Films" xml:space="preserve">
     <value>Films</value>
   </data>
+  <data name="FindFilm" xml:space="preserve">
+    <value>Find film</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="FromRate" xml:space="preserve">
+    <value>From rate</value>
+  </data>
+  <data name="FromYear" xml:space="preserve">
+    <value>From year</value>
+  </data>
   <data name="Genres" xml:space="preserve">
     <value>Genres</value>
   </data>
@@ -164,6 +182,9 @@
   </data>
   <data name="Other" xml:space="preserve">
     <value>Other</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Page</value>
   </data>
   <data name="Rate" xml:space="preserve">
     <value>Rate</value>

@@ -413,6 +413,18 @@ namespace FilmFactory.FilmsData {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/GetTop20Films", ReplyAction="http://tempuri.org/IFilmDataService/GetTop20FilmsResponse")]
         System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> GetTop20FilmsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/FindFilmByDirector", ReplyAction="http://tempuri.org/IFilmDataService/FindFilmByDirectorResponse")]
+        FilmFactory.FilmsData.FilmContract[] FindFilmByDirector(int directorId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/FindFilmByDirector", ReplyAction="http://tempuri.org/IFilmDataService/FindFilmByDirectorResponse")]
+        System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> FindFilmByDirectorAsync(int directorId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/FindFilmByGenre", ReplyAction="http://tempuri.org/IFilmDataService/FindFilmByGenreResponse")]
+        FilmFactory.FilmsData.FilmContract[] FindFilmByGenre(int genreId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFilmDataService/FindFilmByGenre", ReplyAction="http://tempuri.org/IFilmDataService/FindFilmByGenreResponse")]
+        System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> FindFilmByGenreAsync(int genreId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -576,6 +588,22 @@ namespace FilmFactory.FilmsData {
         
         public System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> GetTop20FilmsAsync() {
             return base.Channel.GetTop20FilmsAsync();
+        }
+        
+        public FilmFactory.FilmsData.FilmContract[] FindFilmByDirector(int directorId) {
+            return base.Channel.FindFilmByDirector(directorId);
+        }
+        
+        public System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> FindFilmByDirectorAsync(int directorId) {
+            return base.Channel.FindFilmByDirectorAsync(directorId);
+        }
+        
+        public FilmFactory.FilmsData.FilmContract[] FindFilmByGenre(int genreId) {
+            return base.Channel.FindFilmByGenre(genreId);
+        }
+        
+        public System.Threading.Tasks.Task<FilmFactory.FilmsData.FilmContract[]> FindFilmByGenreAsync(int genreId) {
+            return base.Channel.FindFilmByGenreAsync(genreId);
         }
     }
 }

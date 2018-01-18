@@ -18,7 +18,7 @@ namespace TestService
     public class FilmDataService : IFilmDataService
     {
 
-        IUnitOfWork data = new UnitOfWork("ModelFilmTest");
+        IUnitOfWork data = new UnitOfWork("FilmDBwork");
 
         public FilmDataService()
         {
@@ -77,6 +77,8 @@ namespace TestService
 
         }
 
+        
+
         public void AddGenre(GenreContract genre)
         {
             data.Genres.Create((genre)genre);
@@ -133,6 +135,21 @@ namespace TestService
         public List<FilmContract> GetTop20Films()
         {
             var films = data.Films.GetAll().Select(x => (FilmContract)x).OrderByDescending(x => x.Rate).Take(20).ToList();
+            return films;
+        }
+
+        public List<FilmContract> FindFilmByDirector(int directorId)
+        {
+            var films = data.Films.Find(x => x.DirectorID == directorId).Select(x => (FilmContract)x).ToList();
+            return films;
+        }
+
+        public List<FilmContract> FindFilmByGenre(int genreId)
+        {
+            var genre = data.Genres.GetById(genreId);
+            var films = data.Films.Find(x => x.genre.Contains(genre)).Select(x => (FilmContract)x).ToList();
+
+
             return films;
         }
     }

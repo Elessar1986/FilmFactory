@@ -1,0 +1,51 @@
+﻿@model FilmFactory.Models.Shared.FindFilter
+
+@using (Html.BeginForm("FindFilm", "Film", FormMethod.Get))
+{
+
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="form-group col-md-3  col-sm-6 col-xs-12">
+                <label>@Resources.Resource.Director</label>
+                @Html.DropDownListFor(m => m.DirectorId, (IEnumerable<SelectListItem>)ViewBag.DirectorId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DirectorId, "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="form-group col-md-3  col-sm-6 col-xs-12">
+                <label>@Resources.Resource.Genres</label>
+                @Html.DropDownListFor(m => m.GenreId, (IEnumerable<SelectListItem>)ViewBag.Genre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.GenreId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                <label>@Resources.Resource.FromRate</label>
+                @Html.EditorFor(x => x.Rate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Rate, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                <label>@Resources.Resource.FromYear</label>
+                @Html.EditorFor(x => x.Year, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" value="@Resources.Resource.FindFilm" class="btn btn-success btn-sm active" />
+                </div>
+            </div>
+
+        </div>
+     </div>
+}
+

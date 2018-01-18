@@ -28,10 +28,12 @@ namespace FilmFactory.Models.Film
 
         [Display(Name = "Rate", ResourceType = typeof(Resources.Resource))]
         [Required(ErrorMessageResourceType = typeof(Resources.Resource), ErrorMessageResourceName = "ErrorMessageRequired")]
-        [Range(0.1, 10.0, ErrorMessageResourceType = typeof(Resources.Resource), ErrorMessageResourceName = "ErrorMessageWrongNum")]
+        [Range(0.0, 10.0, ErrorMessageResourceType = typeof(Resources.Resource), ErrorMessageResourceName = "ErrorMessageWrongNum")]
         public double Rate { get; set; }
 
         //public string PhotoName { get; set; }
+
+
         [Display(Name = "Description", ResourceType = typeof(Resources.Resource))]
         public string Description { get; set; }
 

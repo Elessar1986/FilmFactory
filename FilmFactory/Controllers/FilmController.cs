@@ -6,12 +6,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FilmFactory.Environment.DataMapper;
+using PagedList;
+using PagedList.Mvc;
+using FilmFactory.Models.Shared;
+using FilmFactory.Helpers;
 
 namespace FilmFactory.Controllers
 {
     public class FilmController : Controller
     {
         FilmDataServiceClient client;
+
+        private int pageSize = 5;
 
         public FilmController()
         {
@@ -20,10 +26,12 @@ namespace FilmFactory.Controllers
         }
 
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             var Films = client.GetFilms();
-            return View(Films);
+            
+            int pageNumber = (page ?? 1);
+            return View(Films.ToPagedList(pageNumber, pageSize));
         }
 
 
@@ -95,18 +103,80 @@ namespace FilmFactory.Controllers
 
         }
 
+        public ActionResult FindFilm(FindFilter filter, int? page)
+        {
+            try
+            {
+                var FVM = new List<FilmViewModel>();
+                //if (filter == null) filter = new FindFilter();
+                if (page != null)
+                {
+                    FVM = Session["FVM"] as List<FilmViewModel>;
+                    filter = Session["Filter"] as FindFilter;
+                }
+                else {
+
+                    if (ModelState.IsValid)
+                    {
+                        var find = new FindingEngine();
+                        FVM = find.Find(filter, client);
+                        Session["FVM"] = FVM;
+                        Session["Filter"] = filter;
+                        
+                    }
+                }
+
+                int pageNumber = (page ?? 1);
+                var model = new FindViewModel()
+                {
+                    findFilter = filter,
+                    films = FVM.ToPagedList(pageNumber, pageSize)
+                };
+
+                GetFilmViewBag(false);
+                return View(model);
+
+                
+            }
+            catch (Exception ex)
+            {
+                var error = new ErrorViewModel()
+                {
+                    ErrorMessage = ex.Message
+                };
+                return View("~/Views/Shared/Error.cshtml", error);
+            }
+           
+        }
+
         public ActionResult Top()
         {
             var Films = client.GetTop20Films();
             return View(Films);
         }
 
-        private void GetFilmViewBag()
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                client.DeleteFilm(id);
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        private void GetFilmViewBag(bool add = true)
         {
             var Genres = client.GetGenres().Select(x => new SelectListItem { Text = x.GenreName, Value = x.Id.ToString() }).ToList();
+            if(!add) Genres.Insert(0, new SelectListItem() { Text = "-", Value = "-1" });
             ViewBag.Genre = Genres;
 
-            var Directors = client.GetDirector().Select(x => new SelectListItem { Text = x.Director, Value = x.Id.ToString(), Selected = x.Id == 20 }).ToList();
+            var Directors = client.GetDirector().Select(x => new SelectListItem { Text = x.Director, Value = x.Id.ToString() }).ToList();
+            if(!add) Directors.Insert(0, new SelectListItem() { Text = "-", Value = "-1" });
             ViewBag.DirectorId = Directors;
         }
 

@@ -123,11 +123,17 @@
   <data name="AddFilm" xml:space="preserve">
     <value>Добавить фильм</value>
   </data>
+  <data name="AddFoto" xml:space="preserve">
+    <value>Добавить изображение</value>
+  </data>
   <data name="AddGenre" xml:space="preserve">
     <value>Добавить жанр</value>
   </data>
   <data name="AllFilms" xml:space="preserve">
     <value>Все фильмы</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Вернуться к списку</value>
   </data>
   <data name="Copyright" xml:space="preserve">
     <value>© Copyright ,2018 - Арепьев Иван , Все права защищены / ASP.NET Приложение</value>
@@ -156,6 +162,18 @@
   <data name="Films" xml:space="preserve">
     <value>Фильмы</value>
   </data>
+  <data name="FindFilm" xml:space="preserve">
+    <value>Найти фильм</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Из</value>
+  </data>
+  <data name="FromRate" xml:space="preserve">
+    <value>Рейтинг от</value>
+  </data>
+  <data name="FromYear" xml:space="preserve">
+    <value>Год от</value>
+  </data>
   <data name="Genres" xml:space="preserve">
     <value>Жанры</value>
   </data>
@@ -164,6 +182,9 @@
   </data>
   <data name="Other" xml:space="preserve">
     <value>Разное</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Страница</value>
   </data>
   <data name="Rate" xml:space="preserve">
     <value>Райтинг</value>

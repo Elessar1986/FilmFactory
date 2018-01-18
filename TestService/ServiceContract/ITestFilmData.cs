@@ -63,7 +63,11 @@ namespace TestService
         [OperationContract]
         List<FilmContract> GetTop20Films();
 
-        
+        [OperationContract]
+        List<FilmContract> FindFilmByDirector(int directorId);
+
+        [OperationContract]
+        List<FilmContract> FindFilmByGenre(int genreId);
 
     } 
 }

@@ -17,8 +17,11 @@ namespace TestService
 
     public class FilmDataService : IFilmDataService
     {
-
-        IUnitOfWork data = new UnitOfWork("FilmDBwork");
+        //строки подключения:
+        // "FilmDB" - локальная
+        // "ModelFilmTest" - Azure
+        
+        IUnitOfWork data = new UnitOfWork("ModelFilmTest");
 
         public FilmDataService()
         {
